@@ -2,7 +2,21 @@
 
 /**** Imports: modules y partials ****/
 @import "colors";
+@import "cookie";
+
+/**** Fuente ****/
+@font-face {
+  font-family: "Corleone";
+  src: url("/resources/fonts/Corleone.TTF");
+}
 
 /**** Funciones: mixins y extends ****/
 
 /**** Resto del código: ****/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}

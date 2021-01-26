@@ -1,6 +1,18 @@
 @charset "UTF-8";
 /**** Imports: modules y partials ****/
+/**** Fuente ****/
+@font-face {
+  font-family: "Corleone";
+  src: url("/resources/fonts/Corleone.TTF");
+}
 /**** Funciones: mixins y extends ****/
 /**** Resto del código: ****/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
 
 /*# sourceMappingURL=styles.css.map */
