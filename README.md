@@ -1,2 +1,2 @@
 # Balearic-Final
-Balearic Build v4.0
+Repositorio para el proyecto final Balearic Build v4.0
