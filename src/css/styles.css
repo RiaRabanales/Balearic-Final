@@ -7,12 +7,29 @@
 }
 /**** Funciones: mixins y extends ****/
 /**** Resto del código: ****/
+* {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+}
+body > div > div {
+  /* Container de contenido izquierdo */
+  /* Container de aside derecho */
+}
+body > div > div > div:first-of-type {
+  background-color: #ddd;
+  box-sizing: border-box;
+}
+body > div > div > div:last-of-type {
+  text-align: center;
+  color: #ffffff;
+  background-color: #212121;
 }
 
 /*# sourceMappingURL=styles.css.map */

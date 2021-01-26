@@ -13,10 +13,32 @@
 /**** Funciones: mixins y extends ****/
 
 /**** Resto del código: ****/
+* {
+    box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+
+  & > div {
+
+    & > div {
+
+        /* Container de contenido izquierdo */
+        & > div:first-of-type {
+            background-color: $color_surface;
+        }
+
+        /* Container de aside derecho */
+        & > div:last-of-type {
+            text-align: center;
+            color: $color_surfacelight;
+            background-color: $color_secondary;
+        }
+    }
+  }
 }
