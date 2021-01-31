@@ -31,6 +31,29 @@ body > div > div > div:last-of-type {
   background-color: #212121;
 }
 
+#asideCol {
+  text-align: center;
+  background-color: #212121;
+  color: #ffffff;
+}
+#asideCol ul {
+  text-align: left !important;
+}
+#asideCol img {
+  width: 40%;
+  border-radius: 50%;
+  border: 3px solid var(--main-color);
+  transition: transform 2.5s ease-in-out;
+}
+#asideCol img:hover {
+  transform: rotate(360deg);
+}
+#asideCol hr {
+  border: none;
+  height: 5px;
+  background-color: #8e231b;
+}
+
 /**** Header, botón top y footer ****/
 nav,
 footer {

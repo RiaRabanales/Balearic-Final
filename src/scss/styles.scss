@@ -41,6 +41,33 @@ body {
   }
 }
 
+#asideCol {
+  text-align: center;
+  background-color: $color_secondary;
+  color: $color_surfacelight;
+
+  ul {
+    text-align: left !important;
+  }
+
+  img {
+    width: 40%;
+    border-radius: 50%;
+    border: 3px solid var(--main-color);
+    transition: transform 2.5s ease-in-out;
+  
+    &:hover {
+      transform: rotate(360deg);
+    }
+  }
+
+  hr {
+    border: none;
+    height: 5px;
+    background-color: $color_main;
+  }
+}
+
 /**** Header, botón top y footer ****/
 //TODO: reconvertir esto a bootstrap
 nav,
