@@ -6,7 +6,7 @@
   src: url("/resources/fonts/Corleone.TTF");
 }
 /**** Funciones: mixins y extends ****/
-/**** Resto del código: ****/
+/**** CSS general: ****/
 * {
   box-sizing: border-box;
 }
@@ -24,12 +24,51 @@ body > div > div {
 }
 body > div > div > div:first-of-type {
   background-color: #ddd;
-  box-sizing: border-box;
 }
 body > div > div > div:last-of-type {
   text-align: center;
   color: #ffffff;
   background-color: #212121;
+}
+
+/**** Header, botón top y footer ****/
+nav,
+footer {
+  background: #8e231b;
+  color: #ffffff;
+}
+nav a,
+footer a {
+  color: #ffffff;
+}
+nav a > img,
+footer a > img {
+  margin-bottom: -0.5rem;
+  box-sizing: border-box;
+  height: 70px;
+}
+
+footer a {
+  margin-left: 1em;
+}
+
+#botonTop {
+  display: none;
+  /* empieza siempre oculto */
+  position: fixed;
+  bottom: 3.3rem;
+  right: 0.3rem;
+  z-index: 99;
+  /* así queda siempre superpuesto */
+  color: white;
+  background-color: #505050;
+  box-sizing: border-box;
+  font-size: 80%;
+  width: auto;
+}
+#botonTop:hover {
+  color: white;
+  background-color: #5b0000;
 }
 
 /*# sourceMappingURL=styles.css.map */

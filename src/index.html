@@ -22,25 +22,32 @@
     </style>
 
     <!-- Fontawesome -->
-    <script src="https://kit.fontawesome.com/c20c034885.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/c20c034885.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Scripts -->
     <script type="module" src="js/scripts.js"></script>
   </head>
 
-  <body>
+  <body class="d-flex flex-column min-vh-100">
+    <header></header>
 
     <!-- Cuerpo de la página principal -->
-    <div class="container-fluid">
+    <main class="container-fluid p-3 flex-fill">
       <div class="row">
-        <div class="col-12 col-md-8 p-4">
-          Columna de contenido
-        </div>
-        <div class="col-12 col-md-4 p-4">
-          Columna de colaboradores
-        </div>
+        <div class="col-12 col-md-8 p-4">Columna de contenido</div>
+        <div class="col-12 col-md-4 p-4">Columna de colaboradores</div>
       </div>
-    </div>
+    </main>
+
+    <!-- Botón top //TODO: pasar a archivo separado -->
+    <button id="botonTop" title="VOLVER ARRIBA">
+      VOLVER ARRIBA <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <footer class="container-fluid w-100 py-1"></footer>
 
     <!-- Bundle de Bootstrap: siempre al final del body -->
     <script

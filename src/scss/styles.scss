@@ -12,9 +12,9 @@
 
 /**** Funciones: mixins y extends ****/
 
-/**** Resto del código: ****/
+/**** CSS general: ****/
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -25,20 +25,60 @@ body {
   margin: 0;
 
   & > div {
-
     & > div {
+      /* Container de contenido izquierdo */
+      & > div:first-of-type {
+        background-color: $color_surface;
+      }
 
-        /* Container de contenido izquierdo */
-        & > div:first-of-type {
-            background-color: $color_surface;
-        }
-
-        /* Container de aside derecho */
-        & > div:last-of-type {
-            text-align: center;
-            color: $color_surfacelight;
-            background-color: $color_secondary;
-        }
+      /* Container de aside derecho */
+      & > div:last-of-type {
+        text-align: center;
+        color: $color_surfacelight;
+        background-color: $color_secondary;
+      }
     }
+  }
+}
+
+/**** Header, botón top y footer ****/
+//TODO: reconvertir esto a bootstrap
+nav,
+footer {
+  background: $color_main;
+  color: $color_surfacelight;
+
+  a {
+    color: $color_surfacelight;
+
+    & > img {
+      margin-bottom: -0.5rem;
+      box-sizing: border-box;
+      height: 70px;
+    }
+  }
+}
+
+footer {
+  a {
+    margin-left: 1em;
+  }
+}
+
+#botonTop {
+  display: none; /* empieza siempre oculto */
+  position: fixed;
+  bottom: 3.3rem;
+  right: 0.3rem;
+  z-index: 99; /* así queda siempre superpuesto */
+  color: white;
+  background-color: $color_secondarylight;
+  box-sizing: border-box;
+  font-size: 80%;
+  width: auto;
+
+  &:hover {
+    color: white;
+    background-color: $color_maindark;
   }
 }
