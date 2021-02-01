@@ -41,6 +41,19 @@ body {
   }
 }
 
+main {
+
+  section {
+    background-color: $color_surface;
+    border: solid 3px $color_secondary;
+    box-shadow: 0.5rem 0.5rem 0.5rem -0.5rem $color_secondarylight;
+
+    img {
+      width: inherit;
+    }
+  }
+}
+
 #asideCol {
   text-align: center;
   background-color: $color_secondary;
@@ -53,7 +66,7 @@ body {
   img {
     width: 40%;
     border-radius: 50%;
-    border: 3px solid var(--main-color);
+    border: 3px solid $color_main;
     transition: transform 2.5s ease-in-out;
   
     &:hover {

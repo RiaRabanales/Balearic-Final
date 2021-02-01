@@ -36,7 +36,63 @@
 
     <!-- Cuerpo de la página de personajes -->
     <main class="container-fluid p-3 flex-fill">
-      <!-- TODO: completar contenido -->
+      <div class="row justify-content-center">
+        <div class="col-md-5">
+          <h1>¡Date de alta!</h1>
+          <!-- Formulario de registro //TODO completar -->
+          <form id="signUpForm">
+            <section>
+              <h3>Datos de usuario:</h3>
+              <div class="mb-3">
+                <label for="suUsername">Nombre de usuario</label>
+                <input type="text" id="suUsername" placeholder="u123456M" />
+                <div class="suUsernameError" style="width: 100%"></div>
+              </div>
+            </section>
+
+            <section>
+              <h3>Datos personales:</h3>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="suName">Nombre</label>
+                  <input type="text" id="suName" placeholder="Vincent" />
+                  <div class="suNameError"></div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="suSurname">Apellido</label>
+                  <input
+                    type="text"
+                    id="suSurname"
+                    placeholder="van der Grosse"
+                  />
+                  <div class="suSurnameError"></div>
+                </div>
+              </div>
+            </section>
+
+            <div id="suButtons">
+              <input
+                class="btn btn-primary btn-lg btn-block btn-group-justified"
+                type="submit"
+                id="suSubmit"
+                value="ALTA"
+              />
+              <input
+                class="btn btn-primary btn-lg btn-block btn-group-justified"
+                type="reset"
+                id="suReset"
+                value="RESTABLECER"
+              />
+              <input
+                class="btn btn-primary btn-lg btn-block btn-group-justified"
+                type="button"
+                id="suClose"
+                value="CANCELAR"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
     </main>
 
     <!-- Botón top //TODO: pasar a archivo separado -->

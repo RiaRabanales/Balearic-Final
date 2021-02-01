@@ -31,6 +31,15 @@ body > div > div > div:last-of-type {
   background-color: #212121;
 }
 
+main section {
+  background-color: #ddd;
+  border: solid 3px #212121;
+  box-shadow: 0.5rem 0.5rem 0.5rem -0.5rem #505050;
+}
+main section img {
+  width: inherit;
+}
+
 #asideCol {
   text-align: center;
   background-color: #212121;
@@ -42,7 +51,7 @@ body > div > div > div:last-of-type {
 #asideCol img {
   width: 40%;
   border-radius: 50%;
-  border: 3px solid var(--main-color);
+  border: 3px solid #8e231b;
   transition: transform 2.5s ease-in-out;
 }
 #asideCol img:hover {
