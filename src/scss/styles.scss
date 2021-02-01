@@ -2,7 +2,6 @@
 
 /**** Imports: modules y partials ****/
 @import "colors";
-@import "cookie";
 
 /**** Fuente ****/
 @font-face {
@@ -10,17 +9,8 @@
   src: url("/resources/fonts/Corleone.TTF");
 }
 
-/**** Funciones: mixins y extends ****/
 
 /**** CSS general: ****/
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
 
@@ -33,7 +23,6 @@ body {
 
       /* Container de aside derecho */
       & > div:last-of-type {
-        text-align: center;
         color: $color_surfacelight;
         background-color: $color_secondary;
       }
@@ -41,15 +30,56 @@ body {
   }
 }
 
-main {
+h1,
+h2,
+h3 {
+  width: 100%;
+  font-family: Corleone, sans-serif;
+  letter-spacing: 2px;
+  text-align: center;
+}
 
+h1,
+h2 {
+  font-weight: 400;
+  text-decoration: underline;
+  text-decoration-color: $color_main;
+  margin-top: 2.2rem;
+  margin-bottom: 2.2rem;
+}
+
+h4,
+h5,
+h6,
+p {
+  font-family: Open Sans, sans-serif;
+  font-size: 1rem;
+}
+
+main {
   section {
     background-color: $color_surface;
     border: solid 3px $color_secondary;
     box-shadow: 0.5rem 0.5rem 0.5rem -0.5rem $color_secondarylight;
 
     img {
-      width: inherit;
+      width: 300px;
+    }
+
+    iframe {
+      height: 320px;
+      width: 100%;
+      border: none;
+      box-shadow: 0.5rem 0.5rem 0.5rem -0.5rem var(--secondary-light);
+
+      /* Adaptación video YouTube */
+      @media screen and (min-width: 800px) and (max-width: 1100px) {
+        height: auto;
+      }
+
+      @media screen and (min-width: 1101px) {
+        height: 350px;
+      }
     }
   }
 }
@@ -68,7 +98,7 @@ main {
     border-radius: 50%;
     border: 3px solid $color_main;
     transition: transform 2.5s ease-in-out;
-  
+
     &:hover {
       transform: rotate(360deg);
     }
@@ -93,15 +123,14 @@ footer {
 
     & > img {
       margin-bottom: -0.5rem;
-      box-sizing: border-box;
       height: 70px;
     }
   }
 }
 
 footer {
-  a {
-    margin-left: 1em;
+  .bi {
+    font-size: 2rem;
   }
 }
 

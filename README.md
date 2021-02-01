@@ -1,7 +1,20 @@
 # Balearic-Final
 Repositorio para el proyecto final Balearic Build v4.0
 
+### Autor:
+María Rabanales
 
+### Tecnologías:
+* HTML
+* Bootstrap 4.5
+* CSS
+* SCSS
+* JavaScript
+* Canvas
+* Markdown
+* JQuery (marginal)
+
+### Blah
 //TODO COMPLETAR
 
 
