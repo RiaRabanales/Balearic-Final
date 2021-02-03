@@ -1,0 +1,9 @@
+//Para compilar: sass --watch src/scss/custom.scss src/css/custom.css
+@import "colors";
+
+$primary: $color_main;
+$danger: $color_error;
+$light: $color_surface;
+$dark: $color_secondary;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";

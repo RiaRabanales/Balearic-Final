@@ -1,6 +1,6 @@
 //Para compilar: sass --watch src/scss/styles.scss src/css/styles.css
 
-/**** Imports: modules y partials ****/
+/**** Imports ****/
 @import "colors";
 
 /**** Fuente ****/
@@ -10,25 +10,6 @@
 }
 
 /**** CSS general: ****/
-body {
-  margin: 0;
-
-  & > div {
-    & > div {
-      /* Container de contenido izquierdo */
-      & > div:first-of-type {
-        background-color: $color_surface;
-      }
-
-      /* Container de aside derecho */
-      & > div:last-of-type {
-        color: $color_surfacelight;
-        background-color: $color_secondary;
-      }
-    }
-  }
-}
-
 h1,
 h2,
 h3 {
@@ -42,7 +23,7 @@ h1,
 h2 {
   font-weight: 400;
   text-decoration: underline;
-  text-decoration-color: $primary;
+  text-decoration-color: $color_main;
   margin-top: 2.2rem;
   margin-bottom: 2.2rem;
 }
@@ -84,18 +65,10 @@ main {
 }
 
 #asideCol {
-  text-align: center;
-  background-color: $color_secondary;
-  color: $color_surfacelight;
-
-  ul {
-    text-align: left !important;
-  }
 
   img {
     width: 40%;
-    border-radius: 50%;
-    border: 3px solid $primary;
+    border: 3px solid;
     transition: transform 2.5s ease-in-out;
 
     &:hover {
@@ -104,9 +77,7 @@ main {
   }
 
   hr {
-    border: none;
     height: 5px;
-    background-color: $primary;
   }
 }
 
@@ -114,7 +85,6 @@ main {
 //TODO: reconvertir esto a bootstrap
 nav,
 footer {
-  background: $primary;
   color: $color_surfacelight;
 
   a {
@@ -129,7 +99,7 @@ footer {
   #menuLogIn {
     min-width: 225px;
     border: none;
-    background: $primary;
+    background: $color_main;
 
     #liPasswDiv {
       position: relative;
@@ -143,7 +113,7 @@ footer {
         cursor: pointer;
     
         &:hover {
-          color: $primary;
+          color: $color_main;
         }
       }
     }
@@ -165,4 +135,8 @@ footer {
   background-color: $color_surfacelight;
   font-size: 80%;
   width: auto;
+
+  &:hover {
+    color: $color_secondary;
+  }
 }

@@ -28,7 +28,9 @@ También he cambiado mi formulario de registro, que estaba en un *overlay*. Ahor
 //TODO
 
 ### Bootstrap
-Para poder hacer *theming* he tenido que descargar bootstrap en el proyecto con: npm install --
+Para poder hacer *theming* he tenido que descargar bootstrap en el proyecto con: npm install --save-dev bootstrap
+
+
 
 He intentado emplear clases de Bootstrap en todo momento. Para aligerar la carga de trabajo, y aprovechando que se permitía de acuerdo con las instrucciones, he tomado como base y/o inspiración los siguientes ejemplos oficiales:
 * navbar-static

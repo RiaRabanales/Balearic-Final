@@ -1,26 +1,11 @@
 @charset "UTF-8";
-/**** Imports: modules y partials ****/
+/**** Imports ****/
 /**** Fuente ****/
 @font-face {
   font-family: "Corleone";
   src: url("/resources/fonts/Corleone.TTF");
 }
 /**** CSS general: ****/
-body {
-  margin: 0;
-}
-body > div > div {
-  /* Container de contenido izquierdo */
-  /* Container de aside derecho */
-}
-body > div > div > div:first-of-type {
-  background-color: #ddd;
-}
-body > div > div > div:last-of-type {
-  color: #ffffff;
-  background-color: #212121;
-}
-
 h1,
 h2,
 h3 {
@@ -73,33 +58,21 @@ main section iframe {
   }
 }
 
-#asideCol {
-  text-align: center;
-  background-color: #212121;
-  color: #ffffff;
-}
-#asideCol ul {
-  text-align: left !important;
-}
 #asideCol img {
   width: 40%;
-  border-radius: 50%;
-  border: 3px solid #8e231b;
+  border: 3px solid;
   transition: transform 2.5s ease-in-out;
 }
 #asideCol img:hover {
   transform: rotate(360deg);
 }
 #asideCol hr {
-  border: none;
   height: 5px;
-  background-color: #8e231b;
 }
 
 /**** Header, botón top y footer ****/
 nav,
 footer {
-  background: #8e231b;
   color: #ffffff;
 }
 nav a,
@@ -150,6 +123,9 @@ footer .bi {
   background-color: #ffffff;
   font-size: 80%;
   width: auto;
+}
+#botonTop:hover {
+  color: #212121;
 }
 
 /*# sourceMappingURL=styles.css.map */
