@@ -21,12 +21,6 @@
       @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap");
     </style>
 
-    <!-- Fontawesome -->
-    <script
-      src="https://kit.fontawesome.com/c20c034885.js"
-      crossorigin="anonymous"
-    ></script>
-
     <!-- Scripts -->
     <script type="module" src="js/scripts.js"></script>
   </head>
@@ -34,38 +28,75 @@
   <body class="d-flex flex-column min-vh-100">
     <header></header>
 
-    <!-- Cuerpo de la página de personajes -->
+    <!-- Cuerpo de la página de registro -->
     <main class="container-fluid p-3 flex-fill">
       <div class="row justify-content-center">
         <div class="col-md-5">
           <h1>¡Date de alta!</h1>
-          <!-- Formulario de registro //TODO completar -->
           <form id="signUpForm">
             <section>
               <h3>Datos de usuario:</h3>
-              <div class="mb-3">
+              <div class="form-group">
                 <label for="suUsername">Nombre de usuario</label>
-                <input type="text" id="suUsername" placeholder="u123456M" />
+                <input type="text" class="form-control" id="suUsername" placeholder="u123456M" />
                 <div class="suUsernameError" style="width: 100%"></div>
+              </div>
+              <div class="form-group">
+                <label for="suPassw">Contraseña</label>
+                <input type="password" class="form-control" id="suPassw" placeholder="53Patata33" />
+                <div class="suPasswError" style="width: 100%"></div>
+              </div>
+              <div class="form-group">
+                <label for="suPassw2" id="suPassw2Label">Comprobación de contraseña</label>
+                <input type="password" class="form-control" id="suPassw2" />
+                <div class="suPasswError2" style="width: 100%"></div>
               </div>
             </section>
 
             <section>
               <h3>Datos personales:</h3>
               <div class="row">
-                <div class="col-md-6 mb-3">
+                <div class="form-group col-md-6">
                   <label for="suName">Nombre</label>
-                  <input type="text" id="suName" placeholder="Vincent" />
+                  <input type="text" class="form-control" id="suName" placeholder="Vincent" />
                   <div class="suNameError"></div>
                 </div>
-                <div class="col-md-6 mb-3">
+                <div class="form-group col-md-6">
                   <label for="suSurname">Apellido</label>
-                  <input
-                    type="text"
-                    id="suSurname"
-                    placeholder="van der Grosse"
-                  />
+                  <input type="text" class="form-control" id="suSurname"placeholder="van der Grosse" />
                   <div class="suSurnameError"></div>
+                </div>
+                <div class="form-group">
+                  <label for="suTelf">Teléfono</label>
+                  <input type="text" class="form-control" id="suTelf" placeholder="699-666999" />
+                  <div class="suTelfError" style="width: 100%"></div>
+                </div>
+                <div class="form-group">
+                  <label for="suMail">E-mail</label>
+                  <input type="text" class="form-control" id="suMail" placeholder="patata@frita.es" />
+                  <div class="suMailError" style="width: 100%"></div>
+                </div>
+                <div class="form-group">
+                  <label for="suMail2" id="suMail2Label">Comprobación de e-mail</label>
+                  <input type="text" class="form-control" id="suMail2" />
+                  <div class="suMailError2" style="width: 100%"></div>
+                </div>
+                <div class="form-group">
+                  <label for="suCountry">País:</label>
+                  <select id="suCountry" name="suCountry"></select>
+                </div>
+                <div class="form-group">
+                  <fieldset>
+                    <legend>Edad</legend>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="suAge" id="suAgeMenor" value="suAgeMenor">
+                      <label class="form-check-label" for="suAgeMenor">menor de 18 años</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="suAge" id="suAgeMayor" value="suAgeMayor">
+                      <label class="form-check-label" for="suAgeMayor">mayor de 18 años</label>
+                    </div>
+                  </fieldset>
                 </div>
               </div>
             </section>
