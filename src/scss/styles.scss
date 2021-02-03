@@ -9,7 +9,6 @@
   src: url("/resources/fonts/Corleone.TTF");
 }
 
-
 /**** CSS general: ****/
 body {
   margin: 0;
@@ -43,7 +42,7 @@ h1,
 h2 {
   font-weight: 400;
   text-decoration: underline;
-  text-decoration-color: $color_main;
+  text-decoration-color: $primary;
   margin-top: 2.2rem;
   margin-bottom: 2.2rem;
 }
@@ -96,7 +95,7 @@ main {
   img {
     width: 40%;
     border-radius: 50%;
-    border: 3px solid $color_main;
+    border: 3px solid $primary;
     transition: transform 2.5s ease-in-out;
 
     &:hover {
@@ -107,7 +106,7 @@ main {
   hr {
     border: none;
     height: 5px;
-    background-color: $color_main;
+    background-color: $primary;
   }
 }
 
@@ -115,7 +114,7 @@ main {
 //TODO: reconvertir esto a bootstrap
 nav,
 footer {
-  background: $color_main;
+  background: $primary;
   color: $color_surfacelight;
 
   a {
@@ -124,6 +123,29 @@ footer {
     & > img {
       margin-bottom: -0.5rem;
       height: 70px;
+    }
+  }
+
+  #menuLogIn {
+    min-width: 225px;
+    border: none;
+    background: $primary;
+
+    #liPasswDiv {
+      position: relative;
+    
+      .bi-eye {
+        color: $color_secondarylight;
+        position: absolute;
+        right: 0.5rem;
+        top: 0.1rem;
+        z-index: 55;
+        cursor: pointer;
+    
+        &:hover {
+          color: $primary;
+        }
+      }
     }
   }
 }
@@ -137,17 +159,10 @@ footer {
 #botonTop {
   display: none; /* empieza siempre oculto */
   position: fixed;
-  bottom: 3.3rem;
+  bottom: 3.5rem;
   right: 0.3rem;
   z-index: 99; /* así queda siempre superpuesto */
-  color: white;
-  background-color: $color_secondarylight;
-  box-sizing: border-box;
+  background-color: $color_surfacelight;
   font-size: 80%;
   width: auto;
-
-  &:hover {
-    color: white;
-    background-color: $color_maindark;
-  }
 }

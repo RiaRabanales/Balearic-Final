@@ -111,6 +111,29 @@ footer a > img {
   margin-bottom: -0.5rem;
   height: 70px;
 }
+nav #menuLogIn,
+footer #menuLogIn {
+  min-width: 225px;
+  border: none;
+  background: #8e231b;
+}
+nav #menuLogIn #liPasswDiv,
+footer #menuLogIn #liPasswDiv {
+  position: relative;
+}
+nav #menuLogIn #liPasswDiv .bi-eye,
+footer #menuLogIn #liPasswDiv .bi-eye {
+  color: #505050;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.1rem;
+  z-index: 55;
+  cursor: pointer;
+}
+nav #menuLogIn #liPasswDiv .bi-eye:hover,
+footer #menuLogIn #liPasswDiv .bi-eye:hover {
+  color: #8e231b;
+}
 
 footer .bi {
   font-size: 2rem;
@@ -120,19 +143,13 @@ footer .bi {
   display: none;
   /* empieza siempre oculto */
   position: fixed;
-  bottom: 3.3rem;
+  bottom: 3.5rem;
   right: 0.3rem;
   z-index: 99;
   /* así queda siempre superpuesto */
-  color: white;
-  background-color: #505050;
-  box-sizing: border-box;
+  background-color: #ffffff;
   font-size: 80%;
   width: auto;
-}
-#botonTop:hover {
-  color: white;
-  background-color: #5b0000;
 }
 
 /*# sourceMappingURL=styles.css.map */

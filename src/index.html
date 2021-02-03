@@ -5,14 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BalearicBuilding - HOMEPAGE</title>
 
-    <!-- Bootstrap 4.6 -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
-      crossorigin="anonymous"
-    />
-
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
 
@@ -23,12 +15,6 @@
 
     <!-- Iconos de Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-
-    <!-- Fontawesome -->
-    <script
-      src="https://kit.fontawesome.com/c20c034885.js"
-      crossorigin="anonymous"
-    ></script>
 
     <!-- Scripts -->
     <script type="module" src="js/scripts.js"></script>
@@ -45,7 +31,7 @@
             <h1 class="text-center">Balearic Building</h1>
           </section>
           <section class="mb-3">
-            <div class="row p-3">
+            <div class="row py-3 pl-3">
               <div class="col-8">
                 <iframe
                   src="https://www.youtube.com/embed/BrWE2bEPe8c"
@@ -53,15 +39,15 @@
                   allowfullscreen
                 ></iframe>
               </div>
-              <div class="col-3 d-flex flex-column">
-                <button onclick="window.open('https:\/\/www.youtube.com/watch?v=BrWE2bEPe8c&feature=youtu.be');">
-                  <i class="bi bi-youtube"></i> Ver en YouTube
+              <div class="col-3 d-flex flex-column justify-content-around">
+                <button type="button" class="btn btn-primary btn-block" onclick="window.open('https:\/\/www.youtube.com/watch?v=BrWE2bEPe8c&feature=youtu.be');">
+                  <i class="bi bi-youtube"></i> en YouTube
                 </button>
-                <button onclick="location.href='personajes.html';">
-                  <i class="bi bi-person-square"></i> Consultar Personajes
+                <button class="btn btn-primary btn-block" onclick="location.href='personajes.html';">
+                  <i class="bi bi-person-square"></i> personajes
                 </button>
-                <button onclick="location.href='inicio.html';">
-                  <i class="bi bi-controller"></i> Jugar YA
+                <button class="btn btn-primary btn-block" onclick="location.href='juego.html';">
+                  <i class="bi bi-controller"></i> jugar
                 </button>
               </div>
             </div>
@@ -156,8 +142,11 @@
             </p>
 
             <div class="row justify-content-center">
-              <button onclick="location.href='registro.html';">
+              <button type="button" class="btn btn-outline-primary btn-lg mx-2" onclick="location.href='registro.html';">
                 <b>NUEVO JUGADOR</b>
+              </button>
+              <button type="button" class="btn btn-outline-primary btn-lg mx-2" onclick="location.href='juego.html';">
+                <b>JUGAR</b>
               </button>
             </div>
           </section>
@@ -165,10 +154,10 @@
         <div class="col-12 col-md-4 p-3 d-flex flex-column">
           <div id="asideCol" class="text-center">
             <h2>Colaboradores</h2>
-            <div>
+            <div class="px-4">
               <h3><i>María</i></h3>
               <img src="images/colaborador2.png" alt="Colaborador: María" />
-              <p>
+              <p class="mt-2 p-2">
                 Comenzó jugando a Los Sims de pequeña, pasó a crear mods simples
                 en Python, y acabó programando un juego entero. ¿Cómo ha llegado
                 a pasar esto?
@@ -199,10 +188,10 @@
               </div>
             </div>
             <hr />
-            <div>
+            <div class="px-4">
               <h3><i>Candy Vi</i></h3>
               <img src="images/colaborador1.png" alt="Colaborador: Vicky" />
-              <p>
+              <p class="mt-2 p-2">
                 Apasionada por las acrobacias, friki de juegos de mesa y
                 potencial repostera.
               </p>
@@ -232,18 +221,13 @@
               </div>
             </div>
           </div>
-          <div class="text-center">
+          <div class="btn btn-outline-primary btn-block mt-2 p-2">
             <i class="fas fa-ghost"></i>
             version 4.0
           </div>
         </div>
       </div>
     </main>
-
-    <!-- Botón top //TODO: pasar a archivo separado -->
-    <button id="botonTop" title="VOLVER ARRIBA">
-      VOLVER ARRIBA <i class="fas fa-arrow-up"></i>
-    </button>
 
     <footer class="container-fluid w-100"></footer>
 

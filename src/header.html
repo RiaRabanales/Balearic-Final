@@ -1,5 +1,5 @@
 <!-- Header -->
-<nav class="navbar navbar-expand-md mb-0 justify-content-between">
+<nav class="navbar navbar-expand-md navbar-dark justify-content-between">
   <div>
     <a class="navbar-brand" href="index.html">
       <img src="images/logo.png" alt="Logo BB"
@@ -20,34 +20,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.html"
-            >Home<span class="sr-only">(current)</span></a
-          >
-        </li>
         <li class="nav-item">
-          <a class="nav-link" href="registro.html">Registro</a>
-        </li>
-        <li class="dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
-            >Log in<span class="caret"></span
-          ></a>
-          <form id="logInForm">
-            <div class="dropdown-menu border-0">
-                <label for="liUsername">Usuario: </label>
-                <input type="text" id="liUsername" name="liUsername" />
-                <label for="liPassw">Contraseña:
-                  <i class="far fa-eye" id="liPasswIcono"></i>
-                </label>
-                <input type="password" id="liPassw" name="liPassw" />
-                <input id="liSubmit" type="submit" value="LOG IN" />
-                <input id="liClose" type="button" value="SALIR" />
-            </div>
-          </form>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="juego.html">Jugar</a
-          >
+          <a class="nav-link" href="juego.html">Jugar</a>
         </li>
         <li class="nav-item">
           <a
@@ -70,6 +44,49 @@
             tabindex="-1"
             aria-disabled="true"
             >Forum</a
+          >
+        </li>
+        <li class="dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
+            >Log in<span class="caret"></span
+          ></a>
+          <ul class="dropdown-menu dropdown-menu mt-2" id="menuLogIn">
+            <li class="px-3 pt-1">
+              <form class="form" id="logInForm">
+                <div class="form-group">
+                  <input
+                    id="liUsername"
+                    placeholder="Usuario"
+                    class="form-control form-control-sm"
+                    type="text"
+                    required=""
+                  />
+                </div>
+                <div class="form-group" id="liPasswDiv">
+                  <i class="bi bi-eye" id="liPasswIcono"></i>
+                  <input
+                    id="liPassw"
+                    placeholder="Contraseña"
+                    class="form-control form-control-sm"
+                    type="password"
+                    required=""
+                  />
+                </div>
+                <div class="form-group mb-0">
+                  <button type="button" class="btn btn-primary btn-block btn-sm" id="logInButton">
+                    LOGIN
+                  </button>
+                </div>
+              </form>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="registro.html">Registro</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html"
+            >HOME<span class="sr-only">(current)</span></a
           >
         </li>
       </ul>

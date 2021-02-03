@@ -144,8 +144,6 @@ function cargarFormSignUp() {
  * Carga el formulario de log in y define los event handlers que procede.
  */
 function cargarFormLogIn() {
-  document.getElementById("logInOverlay").innerHTML = generarHtmlLogIn();
-
   //Aquí añado los event handlers:
   document.getElementById("liUsername").addEventListener("focusin", (e) => {
     e.target.style.background = "lightgrey";
