@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,7 +7,6 @@
 
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="css/custom.css" />
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
 
     <!-- Tipografía -->
     <style>
@@ -27,9 +26,9 @@
     <!-- Cuerpo de la página principal -->
     <main class="container-fluid py-3 px-5 flex-fill">
       <div class="row">
-        <div class="col-12 col-md-8 p-3 d-flex flex-column">
-          <section class="mb-3 bg-light">
-            <h1 class="text-center">Balearic Building</h1>
+        <div class="col-12 col-md-8 p-4 d-flex flex-column">
+          <section class="mb-3 p-3 bg-light">
+            <p class="h1 text-center">Balearic Building</p>
           </section>
           <section class="mb-3 bg-light">
             <div class="row py-3 pl-3">
@@ -53,12 +52,13 @@
               </div>
             </div>
           </section>
-          <section class="mb-3 p-3 text-justify bg-light">
-            <h2 class="text-center">El Juego</h2>
+          <section class="mb-3 py-4 px-5 text-justify bg-light">
+            <p class="h2 text-center">El Juego</p>
 
-            <h3 class="text-left ml-2">¿Qué es?</h3>
+            <p class="h3 text-left ml-2">¿Qué es?</p>
             <img
               class="float-right ml-4"
+              style="width:300px" 
               src="images/pantallazo-juego-1.png"
               alt="Pantalla de Juego"
             />
@@ -72,10 +72,11 @@
               BalearicBuild muestra perfectamente toda nuestra corrupción.
             </p>
 
-            <h3 class="text-left ml-2 mb-3">¿Cómo jugar?</h3>
+            <p class="h3 text-left ml-2 mb-3">¿Cómo jugar?</p>
 
             <img
               class="float-left mr-4"
+              style="width:300px" 
               src="images/pantallazo-juego-2.png"
               alt="Pantalla de Juego en Evento"
             />
@@ -111,6 +112,7 @@
             <img
               class="float-right ml-4"
               src="images/pantallazo-juego-3.png"
+              style="width:300px" 
               alt="Pantalla de juego con mapa especial"
             />
             <p>
@@ -123,6 +125,7 @@
 
             <img
               class="float-left mr-4"
+              style="width:300px" 
               src="images/pantallazo-juego-4.png"
               alt="Pantalla de game over"
             />
@@ -155,10 +158,10 @@
 
         <!-- Aside: -->
         <div class="col-12 col-md-4 p-3 d-flex flex-column">
-          <div id="asideCol" class="bg-dark text-center text-light">
-            <h2>Colaboradores</h2>
+          <div id="asideCol" class="bg-dark text-center text-light p-4">
+            <p class="h2 mb-4">Colaboradores</p>
             <div class="px-4">
-              <h3><i>María</i></h3>
+              <p class="h3"><i>María</i></p>
               <img class="border-primary rounded-circle" src="images/colaborador2.png" alt="Colaborador: María" />
               <p class="mt-2 p-2">
                 Comenzó jugando a Los Sims de pequeña, pasó a crear mods simples
@@ -166,11 +169,12 @@
                 a pasar esto?
               </p>
               <div>
-                <h4>
+                <p class="h4">
                   RANKINGS
+                  <!--TODO: modificar estos iconos a bs-->
                   <i class="fas fa-minus-square"></i>
                   <i class="fas fa-plus-square"></i>
-                </h4>
+                </p>
                 <ul class="text-left ml-3">
                   <li>Dinero máximo: 30.000$$</li>
                   <li>Mejor personaje: Vincent van der Grosse</li>
@@ -192,18 +196,18 @@
             </div>
             <hr class="bg-primary border-0" />
             <div class="px-4">
-              <h3><i>Candy Vi</i></h3>
+              <p class="h3"><i>Candy Vi</i></p>
               <img class="border-primary rounded-circle" src="images/colaborador1.png" alt="Colaborador: Vicky" />
               <p class="mt-2 p-2">
                 Apasionada por las acrobacias, friki de juegos de mesa y
                 potencial repostera.
               </p>
               <div>
-                <h4>
+                <p class="h4">
                   RANKINGS
                   <i class="fas fa-minus-square"></i>
                   <i class="fas fa-plus-square"></i>
-                </h4>
+                </p>
                 <ul class="text-left ml-3">
                   <li>Dinero máximo: 10.000$$</li>
                   <li>Mejor personaje: Tonina Constructor</li>

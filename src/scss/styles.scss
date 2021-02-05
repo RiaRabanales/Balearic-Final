@@ -1,50 +1,13 @@
-//Para compilar: sass --watch src/scss/styles.scss src/css/styles.css
+/*** Este archivo incluye elementos no modificados con bootstrap ***/
 
-/**** Imports ****/
+/* Imports */
 @import "colors";
 
-/**** Fuente ****/
-@font-face {
-  font-family: "Corleone";
-  src: url("/resources/fonts/Corleone.TTF");
-}
-
-/**** CSS general: ****/
-h1,
-h2,
-h3 {
-  width: 100%;
-  font-family: Corleone, sans-serif;
-  letter-spacing: 2px;
-  text-align: center;
-}
-
-h1,
-h2 {
-  font-weight: 400;
-  text-decoration: underline;
-  text-decoration-color: $color_main;
-  margin-top: 2.2rem;
-  margin-bottom: 2.2rem;
-}
-
-h4,
-h5,
-h6,
-p {
-  font-family: Open Sans, sans-serif;
-  font-size: 1rem;
-}
-
+/* CSS general con elementos no adaptables a bootstrap: */
 main {
   section {
-    background-color: $color_surface;
     border: solid 3px $color_secondary;
     box-shadow: 0.5rem 0.5rem 0.5rem -0.5rem $color_secondarylight;
-
-    img {
-      width: 300px;
-    }
 
     iframe {
       height: 320px;
@@ -65,9 +28,9 @@ main {
 }
 
 #asideCol {
-
   img {
-    width: 40%;
+    width: 44%;
+    min-width: 150px;
     border: 3px solid;
     transition: transform 2.5s ease-in-out;
 
@@ -81,40 +44,24 @@ main {
   }
 }
 
-/**** Header, botón top y footer ****/
-//TODO: reconvertir esto a bootstrap
-nav,
-footer {
-  color: $color_surfacelight;
+#menuLogIn {
+  min-width: 225px;
+  border: none;
+  background: $color_main;
 
-  a {
-    color: $color_surfacelight;
+  #liPasswDiv {
+    position: relative;
 
-    & > img {
-      margin-bottom: -0.5rem;
-      height: 70px;
-    }
-  }
+    .bi-eye {
+      color: $color_secondarylight;
+      position: absolute;
+      right: 0.5rem;
+      top: 0.1rem;
+      z-index: 55;
+      cursor: pointer;
 
-  #menuLogIn {
-    min-width: 225px;
-    border: none;
-    background: $color_main;
-
-    #liPasswDiv {
-      position: relative;
-    
-      .bi-eye {
-        color: $color_secondarylight;
-        position: absolute;
-        right: 0.5rem;
-        top: 0.1rem;
-        z-index: 55;
-        cursor: pointer;
-    
-        &:hover {
-          color: $color_main;
-        }
+      &:hover {
+        color: $color_main;
       }
     }
   }

@@ -1,9 +1,37 @@
 //Para compilar: sass --watch src/scss/custom.scss src/css/custom.css
 @import "colors";
+@import "styles";
 
+@font-face {
+  font-family: "Corleone";
+  src: url("/resources/fonts/Corleone.TTF");
+}
+
+//Declaro colores
 $primary: $color_main;
 $danger: $color_error;
 $light: $color_surface;
 $dark: $color_secondary;
 
+//Modifico las clases de texto
+body {
+  font-family: Open Sans, sans-serif !important;
+}
+
+.h1,
+.h2 {
+  font-family: Corleone, sans-serif;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-decoration: underline;
+  text-decoration-color: $primary;
+}
+
+.h3 {
+    font-family: Corleone, sans-serif;
+    font-weight: 350;
+    letter-spacing: 2px;
+  }
+
+//Importo Bootstrap
 @import "../../node_modules/bootstrap/scss/bootstrap";

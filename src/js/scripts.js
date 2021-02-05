@@ -1,3 +1,7 @@
+import gestionarFormRegistro from "./modules/forms.js";
+import gestionarPersonajes from "./modules/personajes.js";
+
+//window.addEventListener('load', function(){
 $(document).ready(() => {
   //Carga de archivos de header y footer:
   fetch("./header.html")
@@ -21,7 +25,15 @@ $(document).ready(() => {
     .then(() => {
       gestionarBotonTop();
     });
+
+  if (window.location.href.indexOf("registro") > -1) {
+    gestionarFormRegistro();
+  } else if (window.location.href.indexOf("personajes") > -1) {
+    gestionarPersonajes();
+  }
 });
+
+//TODO por ahora he quitado los checks del formulario de registro
 
 /**
  * Función para mostrar/ocultar el botón scroll to top:
@@ -73,11 +85,11 @@ function gestionarLogIn() {
     let usuario = document.getElementById("liUsername").value;
     let contrasena = document.getElementById("liPassw").value;
     if (usuario == "admin" && contrasena == "admin1234") {
-      let miUrl = window.location.href
+      let miUrl = window.location.href;
       console.log(miUrl);
-      window.location.href = '../src/admin.html';
+      window.location.href = "../src/admin.html";
     } else {
-      console.log("TODO: log in mal hecho")
+      console.log("TODO: log in mal hecho");
       //TODO: q pasa si hace buen login y/o si no
     }
   });

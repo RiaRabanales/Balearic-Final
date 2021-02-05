@@ -1,4 +1,105 @@
 @charset "UTF-8";
+/*** Este archivo incluye elementos no modificados con bootstrap ***/
+/* Imports */
+/* CSS general con elementos no adaptables a bootstrap: */
+main section {
+  border: solid 3px #212121;
+  box-shadow: 0.5rem 0.5rem 0.5rem -0.5rem #505050;
+}
+main section iframe {
+  height: 320px;
+  width: 100%;
+  border: none;
+  box-shadow: 0.5rem 0.5rem 0.5rem -0.5rem var(--secondary-light);
+  /* Adaptación video YouTube */
+}
+@media screen and (min-width: 800px) and (max-width: 1100px) {
+  main section iframe {
+    height: auto;
+  }
+}
+@media screen and (min-width: 1101px) {
+  main section iframe {
+    height: 350px;
+  }
+}
+
+#asideCol img {
+  width: 44%;
+  min-width: 150px;
+  border: 3px solid;
+  transition: transform 2.5s ease-in-out;
+}
+#asideCol img:hover {
+  transform: rotate(360deg);
+}
+#asideCol hr {
+  height: 5px;
+}
+
+#menuLogIn {
+  min-width: 225px;
+  border: none;
+  background: #8e231b;
+}
+#menuLogIn #liPasswDiv {
+  position: relative;
+}
+#menuLogIn #liPasswDiv .bi-eye {
+  color: #505050;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.1rem;
+  z-index: 55;
+  cursor: pointer;
+}
+#menuLogIn #liPasswDiv .bi-eye:hover {
+  color: #8e231b;
+}
+
+footer .bi {
+  font-size: 2rem;
+}
+
+#botonTop {
+  display: none;
+  /* empieza siempre oculto */
+  position: fixed;
+  bottom: 3.5rem;
+  right: 0.3rem;
+  z-index: 99;
+  /* así queda siempre superpuesto */
+  background-color: #ffffff;
+  font-size: 80%;
+  width: auto;
+}
+#botonTop:hover {
+  color: #212121;
+}
+
+@font-face {
+  font-family: "Corleone";
+  src: url("/resources/fonts/Corleone.TTF");
+}
+body {
+  font-family: Open Sans, sans-serif !important;
+}
+
+.h1,
+.h2 {
+  font-family: Corleone, sans-serif;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-decoration: underline;
+  text-decoration-color: #8e231b;
+}
+
+.h3 {
+  font-family: Corleone, sans-serif;
+  font-weight: 350;
+  letter-spacing: 2px;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
