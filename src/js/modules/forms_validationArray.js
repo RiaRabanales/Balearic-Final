@@ -5,7 +5,7 @@ import {
   validarNombres,
   validarTelefono,
   validarMail,
-} from "./forms_validation.mjs";
+} from "./forms_validation.js";
 
 const MAX_NOMBRE = 20;
 const MAX_APELLIDO = 30;

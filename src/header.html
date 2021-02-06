@@ -6,7 +6,7 @@
     </a>
   </div>
 
-  <div>
+  <div> 
     <button
       class="navbar-toggler"
       type="button"
@@ -19,7 +19,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto h5">
         <li class="nav-item">
           <a class="nav-link" href="juego.html">Jugar</a>
         </li>
@@ -62,15 +62,15 @@
                     required=""
                   />
                 </div>
-                <div class="form-group" id="liPasswDiv">
-                  <i class="bi bi-eye" id="liPasswIcono"></i>
-                  <input
-                    id="liPassw"
-                    placeholder="Contraseña"
-                    class="form-control form-control-sm"
-                    type="password"
-                    required=""
-                  />
+                <div class="form-group">
+                  <div class="input-group input-group-sm">
+                    <input class="form-control border-right-0" type="password" id="liPassw" placeholder="Contraseña">
+                    <span class="input-group-append border-left-0">
+                      <span class="input-group-text bg-white">
+                        <i class="bi bi-eye" role="button" id="liPasswIcono"></i>
+                      </span>
+                    </span>
+                  </div>
                 </div>
                 <div class="form-group mb-0">
                   <button type="button" class="btn btn-dark btn-block btn-sm" id="logInButton">

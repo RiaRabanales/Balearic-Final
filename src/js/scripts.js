@@ -1,5 +1,5 @@
-import gestionarFormRegistro from "./modules/forms.js";
-import gestionarPersonajes from "./modules/personajes.js";
+import { gestionarFormRegistro } from "./modules/forms.js";
+import { gestionarPersonajes } from "./modules/personajes.js";
 
 //window.addEventListener('load', function(){
 $(document).ready(() => {
@@ -21,9 +21,11 @@ $(document).ready(() => {
     })
     .then((data) => {
       document.querySelector("footer").innerHTML = data;
+      /* TODO
     })
     .then(() => {
       gestionarBotonTop();
+      */
     });
 
   if (window.location.href.indexOf("registro") > -1) {
@@ -74,11 +76,11 @@ function controlarBotonTop() {
 function gestionarLogIn() {
   document.getElementById("liPasswIcono").addEventListener("mouseover", () => {
     visualizarContrasena("liPassw");
-    document.getElementById("liPasswIcono").style.color = "black";
+    document.getElementById("liPasswIcono").classList.add("text-primary");
   });
   document.getElementById("liPasswIcono").addEventListener("mouseout", () => {
     visualizarContrasena("liPassw");
-    document.getElementById("liPasswIcono").style.color = "grey";
+    document.getElementById("liPasswIcono").classList.remove("text-primary");
   });
 
   document.getElementById("logInButton").addEventListener("click", () => {
@@ -99,15 +101,11 @@ function gestionarLogIn() {
  * Muestra u oculta la contraseña escrita por el usuario.
  * @param {String} idPassw contraseña escrita en el campo de input
  */
-function visualizarContrasena(idPassw) {
+export function visualizarContrasena(idPassw) {
   let tipoPassw = document.getElementById(idPassw).type;
   if (tipoPassw === "password") {
     document.getElementById(idPassw).type = "text";
-    document.getElementById(icono).style.display = "none";
-    document.getElementById(iconoNo).style.display = "inline";
   } else {
     document.getElementById(idPassw).type = "password";
-    document.getElementById(icono).style.display = "inline";
-    document.getElementById(iconoNo).style.display = "none";
   }
 }

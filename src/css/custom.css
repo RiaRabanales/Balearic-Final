@@ -42,20 +42,6 @@ main section iframe {
   border: none;
   background: #8e231b;
 }
-#menuLogIn #liPasswDiv {
-  position: relative;
-}
-#menuLogIn #liPasswDiv .bi-eye {
-  color: #505050;
-  position: absolute;
-  right: 0.5rem;
-  top: 0.1rem;
-  z-index: 55;
-  cursor: pointer;
-}
-#menuLogIn #liPasswDiv .bi-eye:hover {
-  color: #8e231b;
-}
 
 footer .bi {
   font-size: 2rem;

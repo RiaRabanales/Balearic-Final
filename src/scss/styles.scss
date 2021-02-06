@@ -48,23 +48,6 @@ main {
   min-width: 225px;
   border: none;
   background: $color_main;
-
-  #liPasswDiv {
-    position: relative;
-
-    .bi-eye {
-      color: $color_secondarylight;
-      position: absolute;
-      right: 0.5rem;
-      top: 0.1rem;
-      z-index: 55;
-      cursor: pointer;
-
-      &:hover {
-        color: $color_main;
-      }
-    }
-  }
 }
 
 footer {

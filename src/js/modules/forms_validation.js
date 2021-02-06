@@ -53,7 +53,7 @@ export function validarContrasena(texto) {
  */
 export function validarIgualdad(texto1, texto2) {
   if (texto1 != texto2) {
-    return "ERROR: la comprobación no coincide con el campo anterior.";
+    return "ERROR: la comprobación no coincide.";
   }
   // Es error sólo si el primero no está vacío; de lo contrario me surgirá problema en el primero.
   if (texto1.length > 0) {

@@ -1,3 +1,4 @@
-function gestionarPersonajes() {
+export function gestionarPersonajes() {
     console.log("entra en js de pjs");
 }
+

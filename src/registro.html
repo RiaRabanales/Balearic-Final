@@ -29,85 +29,102 @@
     <main class="container-fluid p-3 flex-fill">
       <div class="row justify-content-center">
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-          <section class="bg-light p-3 mb-4">
+          <section class="bg-light p-3 py-lg-4 mb-4">
             <p class="h1 text-center">¡Date de alta!</p>
           </section>
           <form id="signUpForm">
-            <section class="bg-light p-3 mb-4">
+            <section class="bg-light p-4 mb-4">
               <p class="h3">Datos de usuario:</p>
               <div class="row">
-                <div class="form-group col-md-12">
+                <div class="form-group col-12  mb-lg-1">
                   <label for="suUsername">Nombre de usuario</label>
                   <input type="text" class="form-control" id="suUsername" placeholder="u123456M" />
-                  <p id="suUsernameDesc" class="small pl-1 text-muted suDesc" tabindex="-1">Formato: u + 6 números + mayúscula.</p>
-                  <p id="suUsernameError" class="small pl-1 text-warning suHidden"></p>
+                  <p id="suUsernameDesc" class="small pl-1 text-muted suDesc" tabindex="-1">Formato: u + 6 números + mayúscula.
+                    <span id="suUsernameError" class="pl-1 text-primary suHidden"></span>
+                  </p>
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-6  mb-lg-1">
                   <label for="suPassw">Contraseña</label>
-                  <input type="password" class="form-control" id="suPassw" placeholder="53Patata33" />
-                  <p id="suPasswDesc" class="small pl-1 text-muted suDesc" tabindex="-1">Formato: 8-12 caracteres alfanuméricos o '_'; 1+ mayúsculas.</p>
-                  <p id="suPasswError" class="small pl-1 text-warning suHidden"></p>
+                  <div class="input-group" id="suPasswGroup">
+                    <input class="form-control border-right-0" type="password" id="suPassw" placeholder="53Patata33">
+                    <span class="input-group-append border-left-0">
+                      <i class="bi bi-eye input-group-text text-primary" role="button" id="suPasswIcono"></i>
+                    </span>
+                  </div>
+                  <p id="suPasswDesc" class="small pl-1 text-muted suDesc" tabindex="-1">Formato: 8-12 caracteres alfanuméricos o '_';<br>1+ mayúsculas.
+                  <span id="suPasswError" class="pl-1 text-primary suHidden"></span>
+                  </p>
                 </div>
-                <div class="form-group col-md-6">
-                  <label for="suPassw2" id="suPassw2Label">Comprobación de contraseña</label>
-                  <input type="password" class="form-control" id="suPassw2" />
-                  <p id="suPasswError2" class="small pl-1 text-warning suHidden"></p>
+                <div class="form-group col-md-6 mb-lg-1">
+                  <label class="text-muted" for="suPassw2" id="suPassw2Label">Comprobación de contraseña</label>
+                  <div class="input-group">
+                    <input class="form-control border-right-0" type="password" id="suPassw2" disabled>
+                    <span class="input-group-append border-left-0">
+                      <i class="bi bi-eye input-group-text text-muted" role="button" id="suPassw2Icono"></i>
+                    </span>
+                  </div>
+                  <p id="suPasswError2" class="small pl-1 text-primary suHidden"></p>
                 </div>
               </div>
             </section>
 
-            <section class="bg-light p-3 mb-4">
+            <section class="bg-light p-4 mb-4">
               <p class="h3">Datos personales:</p>
               <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="suName">Nombre <span class="small text-muted"> opcional</span></label>
+                <div class="form-group col-md-6 mb-lg-1">
+                  <label for="suName">Nombre </label>
                   <input type="text" class="form-control" id="suName" placeholder="Vincent" />
-                  <p id="suNameDesc" class="small pl-1 text-muted suDesc" tabindex="-1">Por favor, introduce tu nombre legal.</p>
-                  <p id="suNameError" class="small pl-1 text-warning suHidden"></p>
+                  <p id="suNameDesc" class="small pl-1 text-muted suDesc" tabindex="-1">Introduce tu nombre legal.
+                    <span id="suNameError" class="pl-1 text-primary suHidden"></span>
+                  </p>
                 </div>
-                <div class="form-group col-md-6">
-                  <label for="suSurname">Apellido <span class="small text-muted"> opcional</span></label>
+                <div class="form-group col-md-6  mb-lg-1">
+                  <label for="suSurname">Apellido </label>
                   <input type="text" class="form-control" id="suSurname" placeholder="van der Grosse" />
-                  <p id="suSurnameError" class="small pl-1 text-muted suHidden"></p>
+                  <p id="suSurnameError" class="small pl-1 text-primary suHidden"></p>
                 </div>
-                <div class="form-group col-md-12">
+                <div class="form-group col-12  mb-lg-1">
                   <label for="suTelf">Teléfono <span class="small text-muted"> opcional</span></label>
                   <input type="text" class="form-control" id="suTelf" placeholder="699-666999" />
-                  <p id="suTelfDesc" class="small pl-1 text-muted suDesc" tabindex="-1">Formato: 6XX-XXXXXX o 9XX-XXXXXX.</p>
-                  <p id="suTelfError" class="small pl-1 text-warning suHidden"></p>
+                  <p id="suTelfDesc" class="small pl-1 text-muted suDesc" tabindex="-1">Formato: 6XX-XXXXXX o 9XX-XXXXXX.
+                    <span id="suTelfError" class="pl-1 text-primary suHidden"></span>
+                  </p>
                 </div>
-                <div class="form-group col-md-6">
-                  <label for="suMail">E-mail</label>
+                <div class="form-group col-md-6  mb-lg-1">
+                  <label for="suMail">E-mail <span class="small text-muted"> opcional</span></label>
                   <input type="text" class="form-control" id="suMail" placeholder="patata@frita.es" />
-                  <div class="suMailError" style="width: 100%"></div>
+                  <p id="suMailDesc" class="small pl-1 text-muted suDesc" tabindex="-1">Sólo se aceptan extensiones .net, .com y .es.
+                    <span id="suMailError" class="small pl-1 text-primary suHidden"></span>
+                  </p>
                 </div>
-                <div class="form-group col-md-6">
-                  <label for="suMail2" id="suMail2Label">Comprobación de e-mail</label>
-                  <input type="text" class="form-control" id="suMail2" />
-                  <p id="suMailDesc" class="small pl-1 text-muted suDesc" tabindex="-1">Sólo se aceptan extensiones .net, .com y .es.</p>
-                  <p id="suMailError" class="small pl-1 text-warning suHidden"></p>
+                <div class="form-group col-md-6  mb-lg-1">
+                  <label class="text-muted" for="suMail2" id="suMail2Label">Comprobación de e-mail</label>
+                  <input type="text" class="form-control" id="suMail2" disabled />
+                  <p id="suMailError2" class="small pl-1 text-primary suHidden"></p>
                 </div>
-                <div class="form-group col-12">
+                <div class="form-group col-12  mb-lg-3">
                   <label for="suCountry">País</label>
                   <select id="suCountry" name="suCountry" class="form-control"></select>
                 </div>
-                <div class="form-group col-12">
+                <div class="form-group col-12 mb-lg-1">
                   <fieldset>
-                    <p class="mb-0">Edad  <span id="suAgeError" class="small text-warning suHidden"></span></p>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="suAge" id="suAgeMenor" value="suAgeMenor">
-                      <label class="form-check-label" for="suAgeMenor">menor de 18 años</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="suAge" id="suAgeMayor" value="suAgeMayor">
-                      <label class="form-check-label" for="suAgeMayor">mayor de 18 años</label>
+                    <p class="mb-0">Edad  <span id="suAgeError" class="small text-primary suHidden"></span></p>
+                    <div class="pl-2 pl-md-5">
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="suAge" id="suAgeMenor" value="suAgeMenor">
+                        <label class="form-check-label" for="suAgeMenor" id="suAgeMenorLabel">menor de 18 años</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="suAge" id="suAgeMayor" value="suAgeMayor">
+                        <label class="form-check-label" for="suAgeMayor" id="suAgeMayorLabel">mayor de 18 años</label>
+                      </div>
                     </div>
                   </fieldset>
                 </div>
               </div>
             </section>
 
-            <section class="bg-light p-3 mb-4">
+            <section class="bg-light p-3 p-md-4 mb-4">
               <div class="btn-group d-flex justify-content-between" role="group">
                 <input
                   class="btn btn-primary"
@@ -139,7 +156,7 @@
       VOLVER ARRIBA <i class="fas fa-arrow-up"></i>
     </button>
 
-    <footer class="container-fluid w-100"></footer>
+    <footer class="container-fluid w-100 m-0 p-0"></footer>
 
     <!-- Bundle de Bootstrap: siempre al final del body -->
     <script
