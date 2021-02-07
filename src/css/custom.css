@@ -43,8 +43,20 @@ main section iframe {
   background: #8e231b;
 }
 
-footer .bi {
-  font-size: 2rem;
+@media screen and (max-width: 799px) {
+  footer .bi {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 800px) {
+  footer .bi {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 799px) {
+  footer #footerCopyright {
+    font-size: small;
+  }
 }
 
 #botonTop {

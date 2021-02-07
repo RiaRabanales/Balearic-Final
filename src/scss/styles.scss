@@ -52,7 +52,18 @@ main {
 
 footer {
   .bi {
-    font-size: 2rem;
+    @media screen and (max-width: 799px) {
+      font-size: 1rem;
+    }
+    @media screen and (min-width: 800px) {
+      font-size: 2rem;
+    }
+  }
+
+  #footerCopyright {
+    @media screen and (max-width: 799px) {
+      font-size: small;
+    }
   }
 }
 
