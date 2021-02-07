@@ -24,27 +24,33 @@
     <header></header>
 
     <!-- Cuerpo de la página de personajes -->
-    <main class="container-fluid p-3 flex-fill">
-      <p class="h1 text-center">Balearic Builders</p>
-      <!-- TODO: completar carrusel -->
-      <div id="carrusel"></div>
-      <!-- TODO: completar pjs -->
-      <div id="personajes"></div>
-      <p class="h2 text-center">¿Quién eres?</p>
-        <div id="personajesVista">
-          <div id="personajesLista"></div>
-          <div id="personajeSeleccion">
-            <div><p class="h3">Soy...</p></div>
-            <div><img src="images/pj.png" alt="PJ" /></div>
-            <div><p>¡Elige tu avatar!</p></div>
-          </div>
-        </div>
-    </main>
+    <main class="container-fluid p-3 col-12 d-flex justify-content-center">
+      <div class="col-md-10 col-lg-8 p-4 d-flex flex-column">
+        <section class="mb-3 p-3 bg-light">
+          <p class="h1 text-center">Balearic Builders</p>
+        </section>
 
-    <!-- Botón top //TODO: pasar a archivo separado -->
-    <button id="botonTop" title="VOLVER ARRIBA">
-      VOLVER ARRIBA <i class="fas fa-arrow-up"></i>
-    </button>
+        <!-- TODO: completar carrusel -->
+        <section class="mb-3 p-3 bg-light">
+            <div id="carrousel">Aquí va el carrusel</div>
+        </section>
+
+        <!-- TODO: completar pjs -->
+        <section class="mb-3 py-3 bg-light" id="personajes">
+          <p class="h2 text-center">¿Quién eres?</p>
+            <div class="d-flex justify-content-between" id="personajesVista">
+              <div class="col-12 col-md-6" id="personajesLista">Aquí va la lista de personajes.</div>
+              <div class="col-12 col-md-6" id="personajeSeleccion">
+                <div class="text-center"><p class="h3">Soy...</p></div>
+                <div class="d-flex justify-content-center">
+                  <img src="images/pj.png" alt="PJ" style="width:40%"/>
+                </div>
+                <div class="text-center"><p>¡Elige tu avatar!</p></div>
+              </div>
+            </div>
+        </section>
+      </div>
+    </main>
 
     <footer class="container-fluid w-100 m-0 p-0"></footer>
 
