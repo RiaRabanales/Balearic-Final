@@ -15,24 +15,12 @@ export var arrayInputIds = ["suUsername", "suPassw", "suPassw2", "suName", "suSu
  * Genera y retorna una lista de objetos que se emplea en las validaciones.
  */
 export function generarArrayParaValidacion() {
-  let nombre = generarObjetoParaValidacion(
-    "suName",
-    "suNameError",
-    validarNombres(document.getElementById("suName").value, MAX_NOMBRE)
-  );
-
-  let apellido = generarObjetoParaValidacion(
-    "suSurname",
-    "suSurnameError",
-    validarNombres(document.getElementById("suSurname").value, MAX_APELLIDO)
-  );
-
   var listaValidacion = [
     generarUsername(),
     generarPassw(),
     generarPassw2(),
-    nombre,
-    apellido,
+    generarName(),
+    generarSurname(),
     generarTelf(),
     generarMail(),
     generarMail2(),
@@ -131,4 +119,28 @@ export function generarMail2() {
     )
   );
   return mail2;
+}
+
+/**
+ * Genera un objeto de comprobación de Nombre al llamar a generarObjetoParaValidacion(input, inputError, metodoValidar)
+ */
+export function generarName() {
+  let nombre = generarObjetoParaValidacion(
+    "suName",
+    "suNameError",
+    validarNombres(document.getElementById("suName").value, MAX_NOMBRE)
+  );
+  return nombre;
+}
+
+/**
+ * Genera un objeto de comprobación de Apellido al llamar a generarObjetoParaValidacion(input, inputError, metodoValidar)
+ */
+export function generarSurname() {
+  let apellido = generarObjetoParaValidacion(
+    "suSurname",
+    "suSurnameError",
+    validarNombres(document.getElementById("suSurname").value, MAX_APELLIDO)
+  );
+  return apellido;
 }

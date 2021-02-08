@@ -5,6 +5,8 @@ import {
   generarUsername,
   generarPassw,
   generarPassw2,
+  generarName,
+  generarSurname,
   generarTelf,
   generarMail,
   generarMail2,
@@ -71,10 +73,12 @@ export function gestionarFormRegistro() {
 
   //Event handlers de nombre y apellidos: se validan al submit.
   document.getElementById("suName").addEventListener("focusout", (e) => {
+    quitarMensajeError(generarName());
     e.target.style.background = "";
   });
 
   document.getElementById("suSurname").addEventListener("focusout", (e) => {
+    quitarMensajeError(generarSurname());
     e.target.style.background = "";
   });
 
@@ -112,7 +116,8 @@ export function gestionarFormRegistro() {
       //Muestro los datos del nuevo usuario por consola como indica el enunciado; no hago submit para no perderlos.
       let nuevoUsuario = generarUsuario();
       console.log(nuevoUsuario);
-      //TODO: lo q falta
+      document.getElementById("textoAlta").innerHTML = "Bienvenido, " + nuevoUsuario.username;
+      document.getElementById("signUpForm").style.display = "none";
     }
   });
 }
@@ -183,6 +188,17 @@ function validarSubmit(validacionFormulario) {
   }
 
   return validacionFormulario;
+}
+
+/**
+ * Comprueba si un mensaje de error previamente puesto en campos name/surname es correcto o no.
+ * @param {String} campoId para el que comprobar el error
+ */
+function quitarMensajeError(objeto) {
+  let mensajeError = objeto.validar;
+  if (document.getElementById(objeto.inputId).value.length < 1 || mensajeError == 'VALIDATED') {
+      marcarInputVacio(objeto.inputId, objeto.inputErrorId);
+  }
 }
 
 /**

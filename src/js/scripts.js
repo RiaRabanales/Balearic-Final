@@ -1,4 +1,5 @@
 import { gestionarFormRegistro } from "./modules/forms.js";
+import {validarUsuario, validarContrasena } from "./modules/forms_validation.js";
 import { gestionarPersonajes } from "./modules/personajes.js";
 
 //window.addEventListener('load', function(){
@@ -21,11 +22,9 @@ $(document).ready(() => {
     })
     .then((data) => {
       document.querySelector("footer").innerHTML = data;
-      /* TODO
     })
     .then(() => {
       gestionarBotonTop();
-      */
     });
 
   if (window.location.href.indexOf("registro") > -1) {
@@ -86,13 +85,17 @@ function gestionarLogIn() {
   document.getElementById("logInButton").addEventListener("click", () => {
     let usuario = document.getElementById("liUsername").value;
     let contrasena = document.getElementById("liPassw").value;
+    // Si es administrador va a la pantalla Admin; si está bien avisa y entra; si no no hace nada.
     if (usuario == "admin" && contrasena == "admin1234") {
-      let miUrl = window.location.href;
-      console.log(miUrl);
       window.location.href = "../src/admin.html";
+    } else if (
+      validarUsuario(usuario) == "VALIDATED" &&
+      validarContrasena(contrasena) == "VALIDATED"
+    ) {
+      //Sólo compruebo que sean viables, al no existir base de datos.
+      mostrarLogIn(usuario);
     } else {
-      console.log("TODO: log in mal hecho");
-      //TODO: q pasa si hace buen login y/o si no
+      console.log("Aviso por consola: log in incorrecto.");
     }
   });
 }
@@ -108,4 +111,18 @@ export function visualizarContrasena(idPassw) {
   } else {
     document.getElementById(idPassw).type = "password";
   }
+}
+
+/**
+ * Indica y oculta los casos de log in realizados con éxito.
+ * @param {String} usuario (con su nombre)
+ */
+function mostrarLogIn(usuario) {
+  document.getElementById("avisoDiv").classList.remove("d-none");
+  document.getElementById("avisoDiv").innerHTML = "<div class='container text-center'><h3>Bienvenido de vuelta, " + usuario + ".</h3>";
+  setTimeout(function () {
+    document.getElementById("avisoDiv").classList.add("d-none");
+    // Cuando haya que hacer el submit, pero no en esta práctica, continuar:
+    // document.getElementById("logInForm").submit();
+  }, 5000);
 }
