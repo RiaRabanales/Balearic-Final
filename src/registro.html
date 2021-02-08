@@ -21,32 +21,32 @@
   </head>
 
   <body class="d-flex flex-column min-vh-100">
-    <header></header>
+    <header role="header"></header>
 
     <!-- TODO: añadir los role -->
 
     <!-- Cuerpo de la página de registro -->
-    <main class="container-fluid p-3 flex-fill">
+    <main class="container-fluid p-3 flex-fill" role="main">
       <div class="row justify-content-center">
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
           <section class="bg-light p-3 py-lg-4 mb-4">
             <p class="h1 text-center" id="textoAlta">¡Date de alta!</p>
           </section>
-          <form id="signUpForm">
-            <section class="bg-light p-4 mb-4">
+          <form id="signUpForm" role="form">
+            <section class="bg-light p-4 mb-4" role="section">
               <p class="h3">Datos de usuario:</p>
               <div class="row">
                 <div class="form-group col-12  mb-lg-1">
-                  <label for="suUsername">Nombre de usuario</label>
-                  <input type="text" class="form-control" id="suUsername" placeholder="u123456M" />
-                  <p id="suUsernameDesc" class="small pl-1 text-muted suDesc" tabindex="-1">Formato: u + 6 números + mayúscula.
-                    <span id="suUsernameError" class="pl-1 text-primary suHidden"></span>
+                  <label for="suUsername" id="suUsernameLabel">Nombre de usuario</label>
+                  <input type="text" class="form-control" id="suUsername" aria-required="true" placeholder="u123456M" aria-labelledby="suUsernameLabel suUsernameDesc" />
+                  <p id="suUsernameDesc" class="small pl-1 text-muted" tabindex="-1">Formato: u + 6 números + mayúscula.
+                    <span id="suUsernameError" class="pl-1 text-primary"></span>
                   </p>
                 </div>
                 <div class="form-group col-md-6 mb-lg-1">
-                  <label for="suPassw">Contraseña</label>
+                  <label for="suPassw" id="suPasswLabel">Contraseña</label>
                   <div class="input-group" id="suPasswGroup">
-                    <input class="form-control border-right-0" type="password" id="suPassw" placeholder="53Patata33">
+                    <input class="form-control border-right-0" type="password" id="suPassw" aria-required="true" placeholder="53patataZ3" aria-labelledby="suPasswLabel suPasswDesc">
                     <span class="input-group-append border-left-0">
                       <i class="bi bi-eye input-group-text text-primary" role="button" id="suPasswIcono"></i>
                     </span>
@@ -63,44 +63,44 @@
                       <i class="bi bi-eye input-group-text text-muted" role="button" id="suPassw2Icono"></i>
                     </span>
                   </div>
-                  <p id="suPasswError2" class="small pl-1 text-primary suHidden"></p>
+                  <p id="suPasswError2" class="small pl-1 text-primary"></p>
                 </div>
               </div>
             </section>
 
-            <section class="bg-light p-4 mb-4">
+            <section class="bg-light p-4 mb-4" role="section">
               <p class="h3">Datos personales:</p>
               <div class="row">
                 <div class="form-group col-md-6 mb-lg-1">
-                  <label for="suName">Nombre </label>
-                  <input type="text" class="form-control" id="suName" placeholder="Vincent" />
-                  <p id="suNameDesc" class="small pl-1 text-muted suDesc" tabindex="-1">Introduce tu nombre legal.
-                    <span id="suNameError" class="pl-1 text-primary suHidden"></span>
+                  <label for="suName" id="suNameLabel">Nombre </label>
+                  <input type="text" class="form-control" id="suName" placeholder="Vincent" aria-labelledby="suNameLabel suNameDesc"/>
+                  <p id="suNameDesc" class="small pl-1 text-muted" tabindex="-1">Introduce tu nombre legal.
+                    <span id="suNameError" class="pl-1 text-primary"></span>
                   </p>
                 </div>
                 <div class="form-group col-md-6  mb-lg-1">
-                  <label for="suSurname">Apellido </label>
-                  <input type="text" class="form-control" id="suSurname" placeholder="van der Grosse" />
-                  <p id="suSurnameError" class="small pl-1 text-primary suHidden"></p>
+                  <label for="suSurname" id="suSurnameLabel">Apellido </label>
+                  <input type="text" class="form-control" id="suSurname" placeholder="van der Grosse" aria-labelledby="suSurnameLabel" />
+                  <p id="suSurnameError" class="small pl-1 text-primary"></p>
                 </div>
                 <div class="form-group col-12  mb-lg-1">
-                  <label for="suTelf">Teléfono <span class="small text-muted"> opcional</span></label>
-                  <input type="text" class="form-control" id="suTelf" placeholder="699-666999" />
-                  <p id="suTelfDesc" class="small pl-1 text-muted suDesc" tabindex="-1">Formato: 6XX-XXXXXX o 9XX-XXXXXX.
-                    <span id="suTelfError" class="pl-1 text-primary suHidden"></span>
+                  <label for="suTelf" id="suTelfLabel">Teléfono <span class="small text-muted"> opcional</span></label>
+                  <input type="text" class="form-control" id="suTelf" placeholder="699-666999" aria-labelledby="suTelfLabel suTelfDesc" />
+                  <p id="suTelfDesc" class="small pl-1 text-muted" tabindex="-1">Formato: 6XX-XXXXXX o 9XX-XXXXXX.
+                    <span id="suTelfError" class="pl-1 text-primary"></span>
                   </p>
                 </div>
                 <div class="form-group col-md-6  mb-lg-1">
-                  <label for="suMail">E-mail <span class="small text-muted"> opcional</span></label>
-                  <input type="text" class="form-control" id="suMail" placeholder="patata@frita.es" />
-                  <p id="suMailDesc" class="small pl-1 text-muted suDesc" tabindex="-1">Sólo se aceptan extensiones .net, .com y .es.
-                    <span id="suMailError" class="small pl-1 text-primary suHidden"></span>
+                  <label for="suMail" id="suMailLabel">E-mail <span class="small text-muted"> opcional</span></label>
+                  <input type="text" class="form-control" id="suMail" placeholder="patata@frita.es" aria-labelledby="suMailLabel suMailDesc" />
+                  <p id="suMailDesc" class="small pl-1 text-muted" tabindex="-1">Sólo se aceptan extensiones .net, .com y .es.
+                    <span id="suMailError" class="small pl-1 text-primary"></span>
                   </p>
                 </div>
                 <div class="form-group col-md-6  mb-lg-1">
                   <label class="text-muted" for="suMail2" id="suMail2Label">Comprobación de e-mail</label>
                   <input type="text" class="form-control" id="suMail2" disabled />
-                  <p id="suMailError2" class="small pl-1 text-primary suHidden"></p>
+                  <p id="suMailError2" class="small pl-1 text-primary"></p>
                 </div>
                 <div class="form-group col-12  mb-lg-3">
                   <label for="suCountry">País</label>
@@ -108,7 +108,7 @@
                 </div>
                 <div class="form-group col-12 mb-lg-1">
                   <fieldset>
-                    <p class="mb-0">Edad  <span id="suAgeError" class="small text-primary suHidden"></span></p>
+                    <p class="mb-0">Edad  <span id="suAgeError" class="small text-primary"></span></p>
                     <div class="pl-2 pl-md-5">
                       <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="suAge" id="suAgeMenor" value="suAgeMenor">
@@ -130,18 +130,21 @@
                   class="btn btn-primary"
                   type="submit"
                   id="suSubmit"
+                  role="button"
                   value="ALTA"
                 />
                 <input
                   class="btn btn-primary mx-1"
                   type="reset"
                   id="suReset"
+                  role="button"
                   value="RESTABLECER"
                 />
                 <input
                   class="btn btn-primary"
                   type="button"
                   id="suClose"
+                  role="button"
                   value="CANCELAR"
                 />
               </div>

@@ -2,7 +2,6 @@ import { gestionarFormRegistro } from "./modules/forms.js";
 import {validarUsuario, validarContrasena } from "./modules/forms_validation.js";
 import { gestionarPersonajes } from "./modules/personajes.js";
 
-//window.addEventListener('load', function(){
 $(document).ready(() => {
   //Carga de archivos de header y footer:
   fetch("./header.html")
@@ -96,6 +95,7 @@ function gestionarLogIn() {
       mostrarLogIn(usuario);
     } else {
       console.log("Aviso por consola: log in incorrecto.");
+      //TODO: decidir q hago
     }
   });
 }
@@ -120,6 +120,8 @@ export function visualizarContrasena(idPassw) {
 function mostrarLogIn(usuario) {
   document.getElementById("avisoDiv").classList.remove("d-none");
   document.getElementById("avisoDiv").innerHTML = "<div class='container text-center'><h3>Bienvenido de vuelta, " + usuario + ".</h3>";
+  //Cierro el dropdown del menú log in sin tocarlo:
+  $('.dropdown-toggle').dropdown('toggle');
   setTimeout(function () {
     document.getElementById("avisoDiv").classList.add("d-none");
     // Cuando haya que hacer el submit, pero no en esta práctica, continuar:
