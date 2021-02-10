@@ -1,6 +1,7 @@
 import { gestionarFormRegistro } from "./modules/forms.js";
 import {validarUsuario, validarContrasena } from "./modules/forms_validation.js";
 import { gestionarPersonajes } from "./modules/personajes.js";
+import { gestionarAdmin } from "./modules/admin.js";
 
 $(document).ready(() => {
   //Carga de archivos de header y footer:
@@ -13,6 +14,10 @@ $(document).ready(() => {
     })
     .then(() => {
       gestionarLogIn();
+    })
+    .then(() => {
+      //Aquí inicializo los tooltips.
+      $('[data-toggle="tooltip"]').tooltip();
     });
 
   fetch("./footer.html")
@@ -30,6 +35,8 @@ $(document).ready(() => {
     gestionarFormRegistro();
   } else if (window.location.href.indexOf("personajes") > -1) {
     gestionarPersonajes();
+  } else if (window.location.href.indexOf("admin") > -1) {
+    gestionarAdmin();
   }
 });
 

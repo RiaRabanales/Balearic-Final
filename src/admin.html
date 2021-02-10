@@ -28,7 +28,50 @@
       <div class="col-md-10 col-lg-8 p-4 d-flex flex-column">
         <section class="mb-3 p-3 bg-light" role="section">
           <p class="h1 mb-4 text-center">Página de administración</p>
-          <p class="text-center">Opciones de admin.</p>
+        </section>
+
+        <section class="mb-3 p-3 bg-light" role="section">  
+          <div class="d-flex justify-content-end">
+            <div class="col-12 col-md-6 col-lg-4 input-group input-group-sm mb-3">
+              <input type="text" class="form-control" placeholder="Buscar una construcción">
+              <div class="input-group-append">
+                <button class="btn btn-secondary" type="button" role="button" data-toggle="tooltip" title="Buscar por nombre">
+                  <i class="bi bi-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tabla para hacer GET de todos los edificios -->
+          <table class="table text-center">
+            <thead class="thead-dark" data-toggle="tooltip" title="Listado de construcciones">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Construcción</th>
+                <th scope="col">Dimensiones</th>
+                <th scope="col">Opciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">id</th>
+                <td>Nombre</td>
+                <td>ancho x alto</td>
+                <td>
+                  <i class="bi bi-file-image text-primary mx-1" data-toggle="tooltip" title="Imagen"></i>
+                  <i class="bi bi-pencil-fill text-primary mx-2" data-toggle="tooltip" title="Editar">
+                  </i> <i class="bi bi-trash-fill text-primary mx-1" data-toggle="tooltip" title="Eliminar"></i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="d-flex justify-content-center mt-2">
+            <button class="btn btn-primary text-white col-12 col-md-6 col-lg-4" type="button" role="button" data-toggle="tooltip" data-placement="bottom" title="Añadir una nueva construcción a la lista">
+              Añadir construcción
+            </button>
+          </div>
+
         </section>
         </div>
       <!-- TODO: completar contenido -->
