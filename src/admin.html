@@ -24,10 +24,10 @@
     <header role="header"></header>
 
     <!-- Cuerpo de la página de administración -->
-    <main class="container-fluid p-3 col-12 d-flex justify-content-center" role="main">
+    <main class="container-fluid p-2 col-12 d-flex justify-content-center" role="main">
       <div class="col-md-10 col-lg-8 p-4 d-flex flex-column">
         <section class="mb-3 p-3 bg-light" role="section">
-          <p class="h1 mb-4 text-center">Página de administración</p>
+          <p class="h1 my-3 text-center">Página de administración</p>
         </section>
 
         <section class="mb-3 p-3 bg-light" role="section">  
@@ -52,32 +52,65 @@
                 <th scope="col">Opciones</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">id</th>
-                <td>Nombre</td>
-                <td>ancho x alto</td>
-                <td>
-                  <i class="bi bi-file-image text-primary mx-1" data-toggle="tooltip" title="Imagen"></i>
-                  <i class="bi bi-pencil-fill text-primary mx-2" data-toggle="tooltip" title="Editar">
-                  </i> <i class="bi bi-trash-fill text-primary mx-1" data-toggle="tooltip" title="Eliminar"></i>
-                </td>
-              </tr>
-            </tbody>
+            <tbody id="listaConstrucciones"></tbody>
           </table>
 
           <div class="d-flex justify-content-center mt-2">
-            <button class="btn btn-primary text-white col-12 col-md-6 col-lg-4" type="button" role="button" data-toggle="tooltip" data-placement="bottom" title="Añadir una nueva construcción a la lista">
+            <button class="btn btn-primary text-white col-12 col-md-6 col-lg-4" id="nuevaConstruccion" type="button" role="button" data-toggle="tooltip" data-placement="bottom" title="Añadir una nueva construcción a la lista">
               Añadir construcción
             </button>
           </div>
 
         </section>
+
+        <section class="mb-3 p-3 bg-light d-none" id="construccionDetalle" role="section">
+          <form class="d-flex flex-column px-5">
+            <p class="h2 mb-2" id="fcTitulo"></p>
+            <div class="form-group">
+              <label for="fcNombre">Nombre de la construcción:</label>
+              <input type="text" class="form-control-sm" id="fcNombre">
+            </div>
+            <div class="form-group col-6 ml-0 pl-0">
+              <label for="fcY" class="form-label col-4 mx-0 px-0">Altura:</label>
+              <input type="range" class="form-range" id="fcY" min="1" max="7" oninput="fcYvalue.value = fcY.value">
+              <output class="text-muted small" name="fcYvalue" id="fcYvalue">4</output>
+            </div>
+            <div class="form-group col-6 ml-0 pl-0">
+              <label for="fcX" class="form-label col-4 mx-0 px-0">Anchura:</label>
+              <input type="range" class="form-range" id="fcX" min="1" max="7" oninput="fcXvalue.value = fcX.value">
+              <output class="text-muted small" name="fcXvalue" id="fcXvalue">4</output>
+            </div>
+            <div class="form-group">
+              <label for="fcImg">Link directo a la imagen:</label>
+              <input type="url" class="form-control-sm" id="fcImg">
+            </div>
+            <button type="button" class="btn btn-primary block" id="fcButton"></button>
+          </form>
+        </section>
+
+        <!-- MODAL -->
+        <div class="modal fade" id="imgModal" tabindex="-1" aria-labelledby="imgModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="imgModalLabel">Imagen</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                      ...
+                  </div>
+              </div>
+          </div>
+        </div>
+
         </div>
       <!-- TODO: completar contenido -->
     </main>
 
-    <footer class="container-fluid w-100 m-0 p-0" role="footer" style="position:fixed;bottom:0"></footer>
+    <!-- TODO: REVISAR EL FORMATO -->
+    <footer class="container-fluid w-100 m-0 p-0" role="footer"></footer>
 
     <!-- Bundle de Bootstrap: siempre al final del body -->
     <script
