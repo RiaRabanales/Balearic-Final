@@ -1,5 +1,5 @@
 import { gestionarFormRegistro } from "./modules/forms.js";
-import {validarUsuario, validarContrasena } from "./modules/forms_validation.js";
+import {validarUsuario, validarContrasena, validarMail } from "./modules/forms_validation.js";
 import { gestionarPersonajes } from "./modules/personajes.js";
 import { gestionarAdmin } from "./modules/admin.js";
 
@@ -89,13 +89,13 @@ function gestionarLogIn() {
   });
 
   document.getElementById("logInButton").addEventListener("click", () => {
-    let usuario = document.getElementById("liUsername").value;
+    let usuario = document.getElementById("liMail").value;
     let contrasena = document.getElementById("liPassw").value;
     // Si es administrador va a la pantalla Admin; si está bien avisa y entra; si no no hace nada.
     if (usuario == "admin" && contrasena == "admin1234") {
       window.location.href = "../src/admin.html";
     } else if (
-      validarUsuario(usuario) == "VALIDATED" &&
+      validarMail(usuario) == "VALIDATED" &&
       validarContrasena(contrasena) == "VALIDATED"
     ) {
       //Sólo compruebo que sean viables, al no existir base de datos.

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BalearicBuilding - PERSONAJES</title>
+    <title>BalearicBuilding - ADMINPAGE</title>
 
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="css/custom.css" />
@@ -14,7 +14,10 @@
     </style>
 
     <!-- Iconos de Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
 
     <!-- Scripts -->
     <script type="module" src="js/scripts.js"></script>
@@ -30,12 +33,18 @@
           <p class="h1 my-3 text-center">Página de administración</p>
         </section>
 
-        <section class="mb-3 p-3 bg-light" role="section">  
+        <section class="mb-3 p-3 bg-light" role="section">
           <div class="d-flex justify-content-end">
             <div class="col-12 col-md-6 col-lg-4 input-group input-group-sm mb-3">
-              <input type="text" class="form-control" placeholder="Buscar una construcción">
+              <input type="text" class="form-control" placeholder="Buscar una construcción"/>
               <div class="input-group-append">
-                <button class="btn btn-secondary" type="button" role="button" data-toggle="tooltip" title="Buscar por nombre">
+                <button
+                  class="btn btn-secondary"
+                  type="button"
+                  role="button"
+                  data-toggle="tooltip"
+                  title="Buscar por nombre"
+                >
                   <i class="bi bi-search"></i>
                 </button>
               </div>
@@ -56,11 +65,18 @@
           </table>
 
           <div class="d-flex justify-content-center mt-2">
-            <button class="btn btn-primary text-white col-12 col-md-6 col-lg-4" id="nuevaConstruccion" type="button" role="button" data-toggle="tooltip" data-placement="bottom" title="Añadir una nueva construcción a la lista">
+            <button
+              class="btn btn-primary text-white col-12 col-md-6 col-lg-4"
+              id="nuevaConstruccion"
+              type="button"
+              role="button"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="Añadir una nueva construcción a la lista"
+            >
               Añadir construcción
             </button>
           </div>
-
         </section>
 
         <section class="mb-3 p-3 bg-light d-none" id="construccionDetalle" role="section">
@@ -68,45 +84,59 @@
             <p class="h2 mb-2" id="fcTitulo"></p>
             <div class="form-group">
               <label for="fcNombre">Nombre de la construcción:</label>
-              <input type="text" class="form-control-sm" id="fcNombre">
+              <input type="text" class="form-control-sm" id="fcNombre" />
             </div>
             <div class="form-group col-6 ml-0 pl-0">
               <label for="fcY" class="form-label col-4 mx-0 px-0">Altura:</label>
-              <input type="range" class="form-range" id="fcY" min="1" max="7" oninput="fcYvalue.value = fcY.value">
+              <input
+                type="range"
+                class="form-range text-primary"
+                id="fcY"
+                min="1"
+                max="7"
+                oninput="fcYvalue.value = fcY.value"
+              />
               <output class="text-muted small" name="fcYvalue" id="fcYvalue">4</output>
             </div>
             <div class="form-group col-6 ml-0 pl-0">
               <label for="fcX" class="form-label col-4 mx-0 px-0">Anchura:</label>
-              <input type="range" class="form-range" id="fcX" min="1" max="7" oninput="fcXvalue.value = fcX.value">
+              <input
+                type="range"
+                class="form-range"
+                id="fcX"
+                min="1"
+                max="7"
+                oninput="fcXvalue.value = fcX.value"
+              />
               <output class="text-muted small" name="fcXvalue" id="fcXvalue">4</output>
             </div>
             <div class="form-group">
               <label for="fcImg">Link directo a la imagen:</label>
-              <input type="url" class="form-control-sm" id="fcImg">
+              <input type="url" class="form-control-sm" id="fcImg" />
             </div>
-            <button type="button" class="btn btn-primary block" id="fcButton"></button>
+            <button
+              type="button"
+              class="btn btn-primary block"
+              id="fcButton"
+            ></button>
           </form>
         </section>
 
         <!-- MODAL -->
         <div class="modal fade" id="imgModal" tabindex="-1" aria-labelledby="imgModalLabel" aria-hidden="true">
           <div class="modal-dialog">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <h5 class="modal-title" id="imgModalLabel">Imagen</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                      </button>
-                  </div>
-                  <div class="modal-body">
-                      ...
-                  </div>
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="imgModalLabel">Imagen</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
+              <div class="modal-body">...</div>
+            </div>
           </div>
         </div>
-
-        </div>
-      <!-- TODO: completar contenido -->
+      </div>
     </main>
 
     <!-- TODO: REVISAR EL FORMATO -->

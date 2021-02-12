@@ -41,7 +41,9 @@ function mostrarTablaConstrucciones(arrayConstrucciones) {
     document.getElementById("listaConstrucciones").innerHTML += construccion;
 
     //Aquí añado los eventos para ver imagen / editar / borrar
-    //TODO imagen
+    document.getElementById(conIdView).addEventListener("click", () => {
+      getImagen(conId);
+    });
     document.getElementById(conIdView).addEventListener("click", () => {
       getConstruccion(conId);
     });
@@ -60,6 +62,7 @@ function getConstruccion(idConstruccion) {
 }
 
 function mostrarConstruccion(construccion) {
+  //TODO unificar desde getConstruccion para poder crear editarConstruccion
   document.getElementById("construccionDetalle").classList.remove("d-none");
   document.getElementById("fcTitulo").innerText = "Construcción con ID " + construccion.id + ":";
   document.getElementById("fcButton").innerText = "CERRAR";
@@ -95,19 +98,14 @@ function generarConstruccion() {
 }
 
 function addConstruccion() {
-  let fcNombre = document.getElementById("fcNombre").value;
-  let fcX = document.getElementById("fcX").value;
-  let fcY = document.getElementById("fcY").value;
-  let fcImg = document.getElementById("fcImg").value;
-  //TODO
 
   fetch("http://localhost:3000/construccions", {
     method: "POST",
     body: JSON.stringify({
-      nom: fcNombre,
-      y: fcY,
-      x: fcX,
-      img: fcImg,
+      nom: document.getElementById("fcNombre").value,
+      y: document.getElementById("fcY").value,
+      x: document.getElementById("fcX").value,
+      img: document.getElementById("fcImg").value,
     }),
     headers: {
       "Content-type": "application/json; charset=UTF-8",
@@ -115,4 +113,15 @@ function addConstruccion() {
   })
     .then((response) => response.json())
     .then((json) => console.log(json));
+}
+
+function getImagen(idConstruccion) {
+  let url = "http://localhost:3000/construccions/" + idConstruccion;
+  fetch(url)
+    .then((response) => response.json())
+    .then((json) => mostrarImagen(json.img));
+}
+
+function mostrarImagen (urlImagen) {
+  //TODO HACER
 }
