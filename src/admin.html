@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BalearicBuilding - ADMINPAGE</title>
+    <title>BalearicBuilding - ADMIN</title>
 
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="css/custom.css" />
@@ -36,14 +36,15 @@
         <section class="mb-3 p-3 bg-light" role="section">
           <div class="d-flex justify-content-end">
             <div class="col-12 col-md-6 col-lg-4 input-group input-group-sm mb-3">
-              <input type="text" class="form-control" placeholder="Buscar una construcción"/>
+              <input type="text" id="inputBusqueda" class="form-control text-center" placeholder="Buscar una construcción"/>
               <div class="input-group-append">
                 <button
                   class="btn btn-secondary"
                   type="button"
                   role="button"
                   data-toggle="tooltip"
-                  title="Buscar por nombre"
+                  title="Buscar por nombre/ID"
+                  id="botonBusqueda"
                 >
                   <i class="bi bi-search"></i>
                 </button>
