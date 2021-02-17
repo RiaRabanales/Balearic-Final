@@ -118,7 +118,6 @@ export function gestionarFormRegistro() {
       document.getElementById("textoAlta").innerHTML = "Bienvenido, " + nuevoUsuario.username;
       document.getElementById("signUpForm").style.display = "none";
       crearUsuario(nuevoUsuario.mail, nuevoUsuario.password);
-      window.location.href = "../src/ok.html";
     }
   });
 }

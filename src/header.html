@@ -20,6 +20,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto h6">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html"
+            >HOME<span class="sr-only">(current)</span></a
+          >
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="juego.html">Jugar</a>
         </li>
@@ -46,11 +51,14 @@
             >Forum</a
           >
         </li>
-        <li class="dropdown">
+        <li class="nav-item">
+          <a class="nav-link" href="registro.html">Registro</a>
+        </li>
+        <li class="dropdown" id="navLogin">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
             >Log in<span class="caret"></span
           ></a>
-          <ul class="dropdown-menu dropdown-menu mt-2" id="menuLogIn">
+          <ul class="dropdown-menu dropdown-menu-md-right mt-2" id="menuLogIn">
             <li class="px-3 pt-1">
               <form class="form" id="logInForm">
                 <div class="form-group">
@@ -80,18 +88,10 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="registro.html">Registro</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="index.html"
-            >HOME<span class="sr-only">(current)</span></a
-          >
+        <li class="nav-item" id="navLogout">
+          <a class="nav-link" href="index.html">LOGOUT</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-
-<!-- Avisos que se muestran y ocultan -->
-<div class="jumbotron jumbotron-fluid d-none bg-light" id="avisoDiv"></div>

@@ -2,7 +2,7 @@ import { gestionarFormRegistro } from "./modules/forms.js";
 import { validarContrasena, validarMail } from "./modules/forms_validation.js";
 import { gestionarPersonajes } from "./modules/personajes.js";
 import { gestionarAdmin } from "./modules/admin.js";
-import { gestionarToken, iniciarUsuario } from "./modules/auth.js";
+import { gestionarToken, iniciarUsuario, setCookie, getCookie } from "./modules/auth.js";
 
 $(document).ready(() => {
   //Carga de archivos de header y footer:
@@ -17,8 +17,11 @@ $(document).ready(() => {
       gestionarLogIn();
     })
     .then(() => {
-      //Aquí inicializo los tooltips.
+      //Aquí inicializo los tooltips:
       $('[data-toggle="tooltip"]').tooltip();
+      //Aquí creo el evento para logout, cuando proceda, y miro si se tiene que ver logIn o logOut:
+      document.getElementById("navLogout").addEventListener("click", realizarLogout);
+      gestionarLog();
     });
 
   fetch("./footer.html")
@@ -96,11 +99,9 @@ function gestionarLogIn() {
     if (usuario == "admin" && contrasena == "admin1234") {
       window.location.href = "../src/admin.html";
     } else if (
-      validarMail(usuario) == "VALIDATED"  //&&
-      //validarContrasena(contrasena) == "VALIDATED"
+      validarMail(usuario) == "VALIDATED" // && validarContrasena(contrasena) == "VALIDATED"
     ) {
       //Sólo compruebo que sean viables, al no existir base de datos.
-      //mostrarLogIn(usuario);
       iniciarUsuario(usuario, contrasena);
     } else {
       console.log("Aviso por consola: log in incorrecto.");
@@ -122,18 +123,17 @@ export function visualizarContrasena(idPassw) {
   }
 }
 
-/**
- * Indica y oculta los casos de log in realizados con éxito.
- * @param {String} usuario (con su nombre)
- */
-function mostrarLogIn(usuario) {
-  document.getElementById("avisoDiv").classList.remove("d-none");
-  document.getElementById("avisoDiv").innerHTML = "<div class='container text-center'><h3>Bienvenido de vuelta, " + usuario + ".</h3>";
-  //Cierro el dropdown del menú log in sin tocarlo:
-  $('.dropdown-toggle').dropdown('toggle');
-  setTimeout(function () {
-    document.getElementById("avisoDiv").classList.add("d-none");
-    // Cuando haya que hacer el submit, pero no en esta práctica, continuar:
-    // document.getElementById("logInForm").submit();
-  }, 5000);
+function realizarLogout() {
+  setCookie("authToken", "", 0);
+}
+
+function gestionarLog() {
+  let authToken = getCookie("authToken");
+  if (authToken == "") {
+    document.getElementById("navLogin").classList.remove("d-none");
+    document.getElementById("navLogout").classList.add("d-none");
+  } else {
+    document.getElementById("navLogin").classList.add("d-none");
+    document.getElementById("navLogout").classList.remove("d-none");
+  }
 }

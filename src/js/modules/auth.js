@@ -28,8 +28,10 @@ export function crearUsuario(mail, pw) {
     },
   })
     .then((response) => response.json())
-    .then((json) => console.log(json));
-  //TODO meter esto en cookie
+    .then((json) => setCookie("authToken", json.access_token, 1))
+    .then(() => {
+      window.location.href = "../src/ok.html";
+    });
 }
 
 export function iniciarUsuario(username, password) {
@@ -37,28 +39,28 @@ export function iniciarUsuario(username, password) {
   let headers = new Headers();
 
   //headers.append('Content-Type', 'text/json');
-  headers.append(
-    "Authorization",
-    "Basic " + btoa(username + ":" + password)
-  );
+  headers.append("Authorization", "Basic " + btoa(username + ":" + password));
 
   fetch(url, {
     method: "GET",
     headers: headers,
   })
     .then((response) => response.json())
-    .then((json) => crearCookie(json.access_token))
+    .then((json) => setCookie("authToken", json.access_token, 1))
     .then(() => {
-        window.location.href = "../src/ok.html";
+      window.location.href = "../src/ok.html";
     });
 }
 
-function crearCookie(valor) {
-  document.cookie = "authToken=" + valor;
+export function setCookie(nombre, valor, horas) {
+  var d = new Date();
+  d.setTime(d.getTime() + horas * 60 * 60 * 1000);
+  var expires = "expires=" + d.toUTCString();
+  document.cookie = nombre + "=" + valor + ";" + expires;
 }
 
-export function getCookie(cname) {
-  var name = cname + "=";
+export function getCookie(nombre) {
+  var name = nombre + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
   var ca = decodedCookie.split(";");
   for (var i = 0; i < ca.length; i++) {
