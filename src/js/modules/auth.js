@@ -1,42 +1,74 @@
-//Esta función me guarda los datos de usuario en una variable.
-// No le pongo valor de 'expires'; quiero que muera bien manualmente, bien cuando vierre el servidor
-function setCookie(nombreCookie, valor) {
-  document.cookie = nombreCookie + "=" + valor;
+export function gestionarToken() {
+  document
+    .getElementById("buttonAuthToken")
+    .addEventListener("click", mostrarToken);
 }
 
-//Aquí compruebo si la cookie está seteada, y si no lo está la seteo.
-//Esto lo uso, por ejemplo, al abrir la página 'personajes': si no está seteada la cookie directamente no muestro nada.
-export function checkCookie() {
-    console.log("entra en checkcookie");
-  var token = getCookie("sesion");
-  if (token != "") {
-    console.log("Sesión abierta con token: " + token);
-    return true;
-  } else {
-    /*
-    Hago las operaciones que procedan
-    username = prompt("Please enter your name:", "");
-    if (username != "" && username != null) {
-      setCookie("username", username, 365);
-    }
-    */
-  }
-  return false;
+function mostrarToken() {
+  let miToken = getCookie("authToken");
+  console.log(miToken);
+  document.getElementById("divAuthToken").innerHTML = "<p>" + miToken + "</p>";
 }
 
-//Aquí recupero el valor de la cookie
-function getCookie(nombreCookie) {
-    var nombre = nombreCookie + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-      var c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }             //revisar este código de https://www.w3schools.com/js/js_cookies.asp
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
+/**
+ * Llama al server y guarda el nuevo usuario por post; recibe un token de autorización.
+ * @param {*} mail
+ * @param {*} pw
+ */
+export function crearUsuario(mail, pw) {
+  let url = "http://localhost:3001/auth/register";
+  fetch(url, {
+    method: "POST",
+    body: JSON.stringify({
+      email: mail,
+      password: pw,
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => console.log(json));
+  //TODO meter esto en cookie
+}
+
+export function iniciarUsuario(username, password) {
+  let url = "http://localhost:3001/auth/login";
+  let headers = new Headers();
+
+  //headers.append('Content-Type', 'text/json');
+  headers.append(
+    "Authorization",
+    "Basic " + btoa(username + ":" + password)
+  );
+
+  fetch(url, {
+    method: "GET",
+    headers: headers,
+  })
+    .then((response) => response.json())
+    .then((json) => crearCookie(json.access_token))
+    .then(() => {
+        window.location.href = "../src/ok.html";
+    });
+}
+
+function crearCookie(valor) {
+  document.cookie = "authToken=" + valor;
+}
+
+export function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(";");
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == " ") {
+      c = c.substring(1);
     }
-    return "";
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
   }
+  return "";
+}

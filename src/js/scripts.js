@@ -1,7 +1,8 @@
 import { gestionarFormRegistro } from "./modules/forms.js";
-import {validarUsuario, validarContrasena, validarMail } from "./modules/forms_validation.js";
+import { validarContrasena, validarMail } from "./modules/forms_validation.js";
 import { gestionarPersonajes } from "./modules/personajes.js";
 import { gestionarAdmin } from "./modules/admin.js";
+import { gestionarToken, iniciarUsuario } from "./modules/auth.js";
 
 $(document).ready(() => {
   //Carga de archivos de header y footer:
@@ -37,10 +38,10 @@ $(document).ready(() => {
     gestionarPersonajes();
   } else if (window.location.href.indexOf("admin") > -1) {
     gestionarAdmin();
+  } else if (window.location.href.indexOf("ok") > -1) {
+    gestionarToken();
   }
 });
-
-//TODO por ahora he quitado los checks del formulario de registro
 
 /**
  * Función para mostrar/ocultar el botón scroll to top:
@@ -95,11 +96,12 @@ function gestionarLogIn() {
     if (usuario == "admin" && contrasena == "admin1234") {
       window.location.href = "../src/admin.html";
     } else if (
-      validarMail(usuario) == "VALIDATED" &&
-      validarContrasena(contrasena) == "VALIDATED"
+      validarMail(usuario) == "VALIDATED"  //&&
+      //validarContrasena(contrasena) == "VALIDATED"
     ) {
       //Sólo compruebo que sean viables, al no existir base de datos.
-      mostrarLogIn(usuario);
+      //mostrarLogIn(usuario);
+      iniciarUsuario(usuario, contrasena);
     } else {
       console.log("Aviso por consola: log in incorrecto.");
       //TODO: decidir q hago

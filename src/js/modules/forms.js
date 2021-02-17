@@ -11,7 +11,8 @@ import {
   generarMail,
   generarMail2,
 } from "./forms_validationArray.js";
-import {visualizarContrasena} from "./../scripts.js"
+import { visualizarContrasena } from "./../scripts.js"
+import { crearUsuario } from "./auth.js";
 
 /**
  * Gestiona el formulario de registro y todos sus event handlers
@@ -23,7 +24,6 @@ export function gestionarFormRegistro() {
   arrayInputIds.forEach((elemento) => {
     document.getElementById(elemento).addEventListener("focusin", (e) => {
       e.target.style.background = "rgba(142, 35, 27, 0.5)";
-      console.log(e.target);
     });
   });
 
@@ -109,8 +109,7 @@ export function gestionarFormRegistro() {
   });
 
   //Event handler de envío:
-  document.getElementById("signUpForm").addEventListener("submit", (e) => {
-    e.preventDefault();
+  document.getElementById("suSubmit").addEventListener("click", (e) => {
     let formValidado = validarSubmit(true);
     if (formValidado) {
       //Muestro los datos del nuevo usuario por consola como indica el enunciado; no hago submit para no perderlos.
@@ -118,6 +117,8 @@ export function gestionarFormRegistro() {
       console.log(nuevoUsuario);
       document.getElementById("textoAlta").innerHTML = "Bienvenido, " + nuevoUsuario.username;
       document.getElementById("signUpForm").style.display = "none";
+      crearUsuario(nuevoUsuario.mail, nuevoUsuario.password);
+      window.location.href = "../src/ok.html";
     }
   });
 }

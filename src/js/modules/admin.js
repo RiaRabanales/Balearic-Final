@@ -58,7 +58,7 @@ function mostrarTablaConstrucciones(arrayConstrucciones) {
 
       document.getElementById("listaConstrucciones").innerHTML += construccion;
       arrayEventosConstrucciones.push(
-        generarObjetoEventos(conId, conIdImg, conIdView, conIdEdit, conIdDelete)
+        generarObjetoEventos(conId, conIdImg, conIdView, conIdEdit, conIdDelete, conNombre, conImagen)
       );
     });
 
@@ -66,13 +66,15 @@ function mostrarTablaConstrucciones(arrayConstrucciones) {
   }
 }
 
-function generarObjetoEventos(id, idImg, idView, idEdit, idDelete) {
+function generarObjetoEventos(id, idImg, idView, idEdit, idDelete, nombre, imgUrl) {
   var objetoEventos = new Object();
   objetoEventos.id = id;
   objetoEventos.imagen = idImg;
   objetoEventos.detalles = idView;
   objetoEventos.edicion = idEdit;
   objetoEventos.borrado = idDelete;
+  objetoEventos.nombre = nombre;
+  objetoEventos.imgUrl = imgUrl;
   return objetoEventos;
 }
 
