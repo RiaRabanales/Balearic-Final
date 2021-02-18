@@ -206,11 +206,18 @@ function getImagen(idConstruccion) {
   let url = "http://localhost:3000/construccions/" + idConstruccion;
   fetch(url)
     .then((response) => response.json())
-    .then((json) => mostrarImagen(json.img));
+    .then((json) => mostrarImagen(json.nom, json.img));
 }
 
-function mostrarImagen(urlImagen) {
-  //TODO HACER
+function mostrarImagen(edificio, urlImagen) {
+  document.getElementById("imgModalLabel").innerHTML = edificio;
+  //Si la imagen tiene url vacía muestro imagen estandar; si tengo tiempo: comprobar que existe imagen
+  if (urlImagen == "") {
+    urlImagen = "images/pj.png";
+  }
+  document.getElementById("imgModalDiv").innerHTML = `
+    <img src="${urlImagen}" alt="${edificio}" style="width:300px" />
+    `;
 }
 
 function buscarConstruccion() {

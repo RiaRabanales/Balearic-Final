@@ -14,7 +14,10 @@
     </style>
 
     <!-- Iconos de Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
 
     <!-- Scripts -->
     <script type="module" src="js/scripts.js"></script>
@@ -28,52 +31,47 @@
       <div class="col-md-10 col-lg-8 p-4 d-flex flex-column">
         <section class="mb-3 p-3 bg-light">
           <p class="h1 text-center">Balearic Builders</p>
-        </section>
 
-        <!-- TODO: completar carrusel -->
-        <section class="mb-3 p-3 bg-light">
-          <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="d-block w-100" src="..." alt="Personajes">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="..." alt="Second slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="..." alt="Third slide">
-              </div>
+          <div class="mb-3 p-3 bg-light d-none" id="section0">
+            <p class="text-center my-3">
+              Para ver el contenido de esta página tienes que hacer login/registro.
+            </p>
+          </div>
+
+          <div class="mb-3 p-3 bg-light d-none col-lg-6" id="section1">
+            <div id="carouselExampleControls" class="carousel slide"data-ride="carousel">
+              <div class="carousel-inner" id="carouselIn"></div>
+              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">antes</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">después</span>
+              </a>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
           </div>
         </section>
 
-        <!-- TODO: completar pjs -->
-        <section class="mb-3 py-3 bg-light d-none" id="personajes">
+        <section class="mb-3 py-3 bg-light d-none" role="section" id="section2">
           <p class="h2 text-center">¿Quién eres?</p>
-            <div class="d-flex justify-content-between" id="personajesVista">
-              <div class="col-12 col-md-6" id="personajesLista">Aquí va la lista de personajes.</div>
-              <div class="col-12 col-md-6" id="personajeSeleccion">
-                <div class="text-center"><p class="h3">Soy...</p></div>
-                <div class="d-flex justify-content-center">
-                  <img src="images/pj.png" alt="PJ" style="width:40%"/>
-                </div>
-                <div class="text-center"><p>¡Elige tu avatar!</p></div>
-              </div>
-            </div>
+          <div class="col-12 d-flex flex-wrap justify-content-between" id="personajesLista"></div>
         </section>
+
+        <!-- Paso los detalles de personajes a un modal -->
+        <div class="modal" id="pjModal" tabindex="-1" aria-labelledby="pjTitulo" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="pjTitulo"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body d-flex justify-content-center" id="pjContent"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
 

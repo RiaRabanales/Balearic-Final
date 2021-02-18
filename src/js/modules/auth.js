@@ -7,7 +7,7 @@ export function gestionarToken() {
 function mostrarToken() {
   let miToken = getCookie("authToken");
   console.log(miToken);
-  document.getElementById("divAuthToken").innerHTML = "<p>" + miToken + "</p>";
+  document.getElementById("divAuthToken").innerHTML = miToken;
 }
 
 /**
@@ -46,9 +46,12 @@ export function iniciarUsuario(username, password) {
     headers: headers,
   })
     .then((response) => response.json())
-    .then((json) => setCookie("authToken", json.access_token, 1))
-    .then(() => {
-      window.location.href = "../src/ok.html";
+    .then((json) => {
+      if (json.access_token != undefined) {
+        // Sólo me pasa a la página de control si efectivamente hace log-in
+        setCookie("authToken", json.access_token, 1);
+        window.location.href = "../src/ok.html";
+      } 
     });
 }
 
