@@ -8,7 +8,7 @@ María Rabanales
 Siguiendo el enunciado, se han creado dos colecciones de Postman y guardado junto con los archivos de base en el directorio /APIS. Sus enlaces son los siguientes:
 * [API CRUD]()
 * [API JWT]()
-//TODO completar enlaces
+//TODO completar guardar archivos en carpeta
 
 ### Tecnologías:
 * HTML
@@ -102,7 +102,7 @@ Respecto a los elementos de Bootstrap empleados, he utilizado los siguientes:
 10. TOOLTIPS: en numerosos elementos, entre otros en la página de administración.
 11. TABLES: al mostrar los edificios existentes en la página de administración.
 12. ALERTS: al hacer log-in con datos incorrectos y no de administrador aparece un alert de error bajo la barra de navegación.
-* BADGES //todo
+13. BADGES: no tenía mucho sentido incluir este elemento en mi diseño, pero por probarlo lo he empleado en la página 'ok' que he generado, fundamentalmente, para visualizar mis tokens.
 * COLLAPSE/ACCORDIONS //TODO
 * SCROLLSPY //todo
 

@@ -1,0 +1,39 @@
+{
+  "construccions": [
+    {
+      "id": 1,
+      "nom": "Xibiu",
+      "y": 2,
+      "x": 2,
+      "img": "https://i.ibb.co/GRc6N2z/edif-xibiu.png"
+    },
+    {
+      "id": 2,
+      "nom": "Casa",
+      "y": 2,
+      "x": 2,
+      "img": "https://i.ibb.co/z7zJm7K/edif-casa.png"
+    },
+    {
+      "id": 3,
+      "nom": "Xalet",
+      "y": 2,
+      "x": 3,
+      "img": "https://i.ibb.co/y6nP5xf/edif-xalet.png"
+    },
+    {
+      "id": 4,
+      "nom": "Hotel",
+      "y": 4,
+      "x": 4,
+      "img": "https://i.ibb.co/s1M8Gtw/edif-hotel.png"
+    },
+    {
+      "nom": "Prueba",
+      "y": "3",
+      "x": "5",
+      "img": "",
+      "id": 5
+    }
+  ]
+}
