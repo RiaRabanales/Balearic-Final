@@ -17,8 +17,9 @@ $(document).ready(() => {
       gestionarLogIn();
     })
     .then(() => {
-      //Aquí inicializo los tooltips:
+      //Aquí inicializo los tooltips y popovers de Bootstrap:
       $('[data-toggle="tooltip"]').tooltip();
+      $('[data-toggle="popover"]').popover();
       //Aquí creo el evento para logout, cuando proceda, y miro si se tiene que ver logIn o logOut:
       document.getElementById("navLogout").addEventListener("click", realizarLogout);
       gestionarLog();
@@ -105,7 +106,12 @@ function gestionarLogIn() {
       iniciarUsuario(usuario, contrasena);
     } else {
       console.log("Aviso por consola: log in incorrecto.");
-      //TODO: decidir q hago
+      //Aquí incluyo un alert:
+      document.getElementById("alertWarning").innerHTML = "¡Log-in incorrecto!";
+      document.getElementById("alertWarning").classList.remove("d-none");
+      setTimeout(function () {
+        document.getElementById("alertWarning").classList.add("d-none");
+      }, 6000);
     }
   });
 }
