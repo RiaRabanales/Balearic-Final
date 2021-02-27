@@ -19,24 +19,15 @@ import { crearUsuario } from "./auth.js";
  */
 export function gestionarFormRegistro() {
   generarSelectPaises();
-  
-  // Event handlers para focus in de los distintos inputs:
-  arrayInputIds.forEach((elemento) => {
-    document.getElementById(elemento).addEventListener("focusin", (e) => {
-      e.target.style.background = "rgba(142, 35, 27, 0.5)";
-    });
-  });
 
   // Event handler de nombre de usuario:
-  document.getElementById("suUsername").addEventListener("focusout", (e) => {
+  document.getElementById("suUsername").addEventListener("focusout", () => {
     gestionarValidacionInput(generarUsername());
-    e.target.style.background = "";
   });
 
   //Event handlers de contraseñas y ojos para visualización:
-  document.getElementById("suPassw").addEventListener("focusout", (e) => {
+  document.getElementById("suPassw").addEventListener("focusout", () => {
     gestionarValidacionInput(generarPassw());
-    e.target.style.background = "";
   });
 
   document.getElementById("suPasswIcono").addEventListener("mouseover", () => {
@@ -51,9 +42,8 @@ export function gestionarFormRegistro() {
     document.getElementById("suPasswIcono").classList.add("text-primary");
   });
 
-  document.getElementById("suPassw2").addEventListener("focusout", (e) => {
+  document.getElementById("suPassw2").addEventListener("focusout", () => {
     gestionarValidacionInput(generarPassw2());
-    e.target.style.background = "";
   });
 
   document.getElementById("suPassw2Icono").addEventListener("mouseover", () => {
@@ -72,31 +62,26 @@ export function gestionarFormRegistro() {
   });
 
   //Event handlers de nombre y apellidos: se validan al submit.
-  document.getElementById("suName").addEventListener("focusout", (e) => {
+  document.getElementById("suName").addEventListener("focusout", () => {
     quitarMensajeError(generarName());
-    e.target.style.background = "";
   });
 
-  document.getElementById("suSurname").addEventListener("focusout", (e) => {
+  document.getElementById("suSurname").addEventListener("focusout", () => {
     quitarMensajeError(generarSurname());
-    e.target.style.background = "";
   });
 
   //Event handler de teléfono:
-  document.getElementById("suTelf").addEventListener("focusout", (e) => {
+  document.getElementById("suTelf").addEventListener("focusout", () => {
     gestionarValidacionInput(generarTelf());
-    e.target.style.background = "";
   });
 
   //Event handlers de E-mail:
-  document.getElementById("suMail").addEventListener("focusout", (e) => {
+  document.getElementById("suMail").addEventListener("focusout", () => {
     gestionarValidacionInput(generarMail());
-    e.target.style.background = "";
   });
 
-  document.getElementById("suMail2").addEventListener("focusout", (e) => {
+  document.getElementById("suMail2").addEventListener("focusout", () => {
     gestionarValidacionInput(generarMail2());
-    e.target.style.background = "";
   });
 
   //Event handlers de edad: se marca el botón al hacer click en el label
@@ -168,7 +153,7 @@ function validarSubmit(validacionFormulario) {
   arrayValidacion.forEach((item) => {
     let resultadoValidacion = item.validar;
     if (resultadoValidacion == "VALIDATED") {
-      //marcarInputCorrecto(item.inputId, item.inputErrorId);
+      marcarInputCorrecto(item.inputId, item.inputErrorId);
     } else {
       marcarInputError(item.inputId, item.inputErrorId, resultadoValidacion);
       validacionFormulario = false;
@@ -265,10 +250,11 @@ function gestionarValidacionInput(elemento) {
 function marcarInputError(miInput, miInputError, textoError) {
   if (miInput == "suPassw" || miInput == "suPassw2") {
     let miInputGroup = miInput + "Group";
-    document.getElementById(miInputGroup).style.border = "3px solid rgb(142, 101, 27)";
-    document.getElementById(miInputGroup).style.borderRadius = "5px";
+    document.getElementById(miInputGroup).classList.remove("is-valid");
+    document.getElementById(miInputGroup).classList.add("is-invalid");
   } else {
-    document.getElementById(miInput).style.border = "3px solid rgb(142, 101, 27)";
+    document.getElementById(miInput).classList.remove("is-valid");
+    document.getElementById(miInput).classList.add("is-invalid");
   }
   document.getElementById(miInput).focus();
   document.getElementById(miInputError).innerHTML = "<i>" + textoError + "</i>";
@@ -283,9 +269,11 @@ function marcarInputError(miInput, miInputError, textoError) {
 function marcarInputVacio(miInput, miInputError) {
   if (miInput == "suPassw" || miInput == "suPassw2") {
     let miInputGroup = miInput + "Group";
-    document.getElementById(miInputGroup).style.border = "1px solid grey";
+    document.getElementById(miInputGroup).classList.remove("is-valid");
+    document.getElementById(miInputGroup).classList.remove("is-invalid");
   } else {
-    document.getElementById(miInput).style.border = "1px solid grey";
+    document.getElementById(miInput).classList.remove("is-valid");
+    document.getElementById(miInput).classList.remove("is-invalid");
   }
   document.getElementById(miInputError).innerHTML = "";
   document.getElementById(miInputError).style.display = "none";
@@ -299,12 +287,14 @@ function marcarInputVacio(miInput, miInputError) {
 function marcarInputCorrecto(miInput, miInputError) {
   if (miInput == "suPassw" || miInput == "suPassw2") {
     let miInputGroup = miInput + "Group";
-    document.getElementById(miInputGroup).style.border = "1px solid grey";
+    document.getElementById(miInputGroup).classList.remove("is-invalid");
+    document.getElementById(miInputGroup).classList.add("is-valid");
   } else {
-    document.getElementById(miInput).style.border = "1px solid grey";
+    document.getElementById(miInput).classList.remove("is-invalid");
+    document.getElementById(miInput).classList.add("is-valid");
   }
   document.getElementById(miInputError).innerHTML = "";
-  document.getElementById(miInputError).style.display = "none";
+  document.getElementById(miInputError).classList.add("d-none");
 }
 
 /**

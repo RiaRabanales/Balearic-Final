@@ -25,7 +25,7 @@ He elaborado un pequeño vídeo explicativo; está colgado [en Youtube](). //TOD
 
 He aprovechado esta práctica para realizar algunas modificaciones y mejoras en el contenido de la práctica 3, siguiendo los problemas encontrados en la corrección. A título de ejemplo, los mensajes de error en nombres y apellidos desaparecen correctamente cuando procede.
 
-He eliminado las páginas y scripts exclusivos del juego y los he sustituído por una pequeña página genérica.
+He eliminado las páginas y scripts exclusivos del juego y los he sustituído por una pequeña página genérica. También he creado una pequeña página (*ok.html*) sin un uso más allá que ayudarme durante el proceso de programación: me indica cuándo se ha realizado un registro/login con éxito y me muestra cómodamente el token del usuario. He decidido mantenerla en la entrega ya que es relativamente útil.
 
 En todo momento he seguido los criterios de diseño, usabilidad y accesibilidad que hemos visto en clase, y he trabajado buscando la máxima responsividad, teniendo en cuenta el diseño *móvil* desde el principio.
 
@@ -104,6 +104,7 @@ Respecto a los elementos de Bootstrap empleados, he utilizado los siguientes:
 12. ALERTS: al hacer log-in con datos incorrectos y no de administrador aparece un alert de error bajo la barra de navegación.
 13. BADGES: no tenía mucho sentido incluir este elemento en mi diseño, pero por probarlo lo he empleado en la página 'ok' que he generado, fundamentalmente, para visualizar mis tokens.
 14. COLLAPSE/ACCORDIONS: en el contenido de la página de inicio (sección inferior). De entrada, el primer elemento del acordeón se muestra, mientras que el segundo está *collapsed*.
+15. INPUT GROUP: si bien no se solicitaba en el enunciado, su uso es habitual en páginas web de internet y me ha parecido interesante estudiarlo; hay varios en las contraseñas del formulario de registro.
 
 
 Siempre que ha sido posible he modificado el css y los scripts originales para adaptarlos a las clases de Bootstrap. Me parece interesante destacar el uso creciente que he ido haciendo de la clase bootstrap *display-none* (d-none); incluirla y retirarla para mostrar y ocultar elementos a través de su clase ha sido una actividad continua en mi desarrollo de javascript.
@@ -122,6 +123,73 @@ A título de ejemplo cabe ver el tratamiento del *alert* de error al hacer un lo
     }
 ~~~
 
-//TODO carrusel y cards en la página de personajes
+### Página de ADMIN:
+Cuando en el formulario de *log-in* se introduce el usuario *admin* y la contraseña *admin1234* se entra en una pequeña página de administración a la que es imposible acceder de otra manera. Cabe destacar que este pseudo-login no implica obtener un token, de manera que como admin no se podrán ver los personajes.
 
-//TODO validacion de registro con bootstrap
+La página de administración muestra, como elemento central, una tabla con las construcciones del juego. Cada fila de la tabla es una construcción: se ve su id (en la pseudo-base de datos), su nombre, su tamaño, y una casilla con botones de apoyo: botón para visualizar su imagen (que se abre en un modal), botón para ver todos los datos del edificio, botón para modificarlos, y botón para eliminar la propia construcción.
+
+Para visualizar la imagen, y tras investigar sobre el tema, he optado por no emplear el método *blob* visto en clase, aunque inicialmente sí lo hice: esto se debe a que obtener la imagen por blob tarda mucho comparado con el método empleado finalmente, por lo que no resulta apropiado para una página moderna.
+
+Esta página tiene, además, un buscador de construcciones (por id o nombre), siguiendo una de las ampliaciones sugeridas en el enunciado, y un botón para añadir nuevas construcciones.
+
+El botón para añadir nuevas construcciones abre un formulario que permite introducir los datos del nuevo edificio y después grabarlos. Esto llama a una función del archivo *admin.js* que emplea *fetch* de la siguiente manera:
+
+~~~
+function addConstruccion() {
+  fetch("http://localhost:3000/construccions", {
+    method: "POST",
+    body: JSON.stringify({
+      nom: document.getElementById("fcNombre").value,
+      y: document.getElementById("fcY").value,
+      x: document.getElementById("fcX").value,
+      img: document.getElementById("fcImg").value,
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => console.log(json)); //lo mantengo para facilitarme el trabajo
+}
+~~~
+
+### Página de personajes:
+La página de personajes es, junto con el formulario de registro y la página principal, la que más se ha modificado durante esta práctica.
+
+Para ver el contenido de la página hace falta un token; es necesario haber hecho login o registro previo. De lo contrario, la página sólo muestra un mensaje informativo.
+
+Cuando se tiene el token, se muestra en la parte superior un carrusel interactivo de personajes. En la sección inferior de la página se muestran *cards* de bootstrap con la imagen y el nombre de cada personaje, siguiendo las indicaciones del enunciado.
+
+He cambiado un poco la imagen original de la página, porque no resultaba estéticamente agradable (ni fácil de visualizar) tener los *cards* sólo en medio contenedor y el detalle del personaje seleccionado en la otra mitad. En vez de esto cuando se selecciona un personaje (haciendo click con el ratón sobre su *card*) se abre un modal con su imagen, su nombre, y su motto.
+
+### Formulario de registro: validación.
+Para reconstruir con Bootstrap la validación del formulario de registro he tenido que decidir, en primer lugar, si mantendría la validación en mi documento js o si la pasaría plenamente al frontal; para aprovechar el código ya elaborado en ejercicios anteriores he elegido la primera opción, emulando [una validación por el lado del servidor](https://mdbootstrap.com/docs/standard/forms/validation/#section-server-side). La principal implicación de esto es que no he tenido que marcar el formulario con *class="needs-validation" novalidate*.
+
+Para aprovechar las clases de Bootstrap he decicido replantear los errores de la siguiente manera:
+
+~~~
+<span id="suUsernameError" class="invalid-feedback"></span>
+~~~
+
+Pero no he visto la necesidad de crear elementos para marcar el feedback correcto, que ya se señalará de por sí cambiando el borde de cada input cuando proceda.
+
+He desarrollado las marcas de validaciones siguiendo el *modus operandi* de añadir y quitar clases de Bootstrap vía .js. De esta manera, y a título de ejemplo, la función para marcar un input inválido (en el módulo forms.js) queda como sigue:
+
+~~~
+function marcarInputCorrecto(miInput, miInputError) {
+  if (miInput == "suPassw" || miInput == "suPassw2") {
+    let miInputGroup = miInput + "Group";
+    document.getElementById(miInputGroup).classList.remove("is-invalid");
+    document.getElementById(miInputGroup).classList.add("is-valid");
+  } else {
+    document.getElementById(miInput).classList.remove("is-invalid");
+    document.getElementById(miInput).classList.add("is-valid");
+  }
+  document.getElementById(miInputError).innerHTML = "";
+  document.getElementById(miInputError).classList.add("d-none");
+}
+~~~
+
+En este código puede verse uno de los principales problemas a los que me he enfrentado con este código: el tratamiento diferente de los [input-groups](https://getbootstrap.com/docs/4.0/components/input-group/) y los input simples. Durante el desarrollo de la práctica [he marcado este problema con un issue](https://github.com/RiaRabanales/Balearic-Final/issues/6), y tras mucho investigar he concluido que es un problema meramente estético por la versión de Bootstrap; en 5.0 este problema está automáticamente resuelto.
+
+Por último, cabe destacar que he aprovechado el replanteamiento de estas validaciones para solucionar los pequeños problemas encontrados en la corrección de la práctica anterior.
