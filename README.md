@@ -9,7 +9,6 @@ Siguiendo el enunciado, se han creado dos colecciones de Postman y guardado junt
 * [API CRUD](https://github.com/RiaRabanales/Balearic-Final/tree/main/resources/apis/crud)
 * [API JWT](https://github.com/RiaRabanales/Balearic-Final/tree/main/resources/apis/jwt)
 
-
 ### Tecnologías:
 * HTML
 * Bootstrap 4.5
@@ -21,7 +20,7 @@ Siguiendo el enunciado, se han creado dos colecciones de Postman y guardado junt
 * JQuery (marginal)
 
 ### Observaciones iniciales:
-He elaborado un pequeño vídeo explicativo; está colgado [en Youtube](). //TODO COMPLETAR
+He elaborado un pequeño vídeo explicativo; está colgado [como vídeo de Youtube](https://youtu.be/tBVdwng6tDM).
 
 He aprovechado esta práctica para realizar algunas modificaciones y mejoras en el contenido de la práctica 3, siguiendo los problemas encontrados en la corrección. A título de ejemplo, los mensajes de error en nombres y apellidos desaparecen correctamente cuando procede.
 
@@ -122,6 +121,14 @@ A título de ejemplo cabe ver el tratamiento del *alert* de error al hacer un lo
       }, 6000);
     }
 ~~~
+
+### Bootstrap vs SCSS:
+Dado que algunos efectos (por ejemplo, la rotación de las imágenes) no se pueden hacer bien en Bootstrap, he decidido mantener tres archivos scss:
+1. custom.scss: sobreescribe las clases de bootstrap (*theming*) e importa los otros dos archivos.
+2. colors.scss: unifica los colores por separado.
+3. styles.scss: mantiene los elementos css independientes de bootstrap.
+
+Respecto al *theming*, he seguido la opción *a*; la opción *b* me dio numerosos problemas en torno a las fechas del examen.
 
 ### Página de ADMIN:
 Cuando en el formulario de *log-in* se introduce el usuario *admin* y la contraseña *admin1234* se entra en una pequeña página de administración a la que es imposible acceder de otra manera. Cabe destacar que este pseudo-login no implica obtener un token, de manera que como admin no se podrán ver los personajes.

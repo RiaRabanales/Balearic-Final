@@ -1,6 +1,5 @@
 import { validarEdad } from "./forms_validation.js";
 import {
-  arrayInputIds,
   generarArrayParaValidacion,
   generarUsername,
   generarPassw,
@@ -104,6 +103,10 @@ export function gestionarFormRegistro() {
       document.getElementById("signUpForm").style.display = "none";
       crearUsuario(nuevoUsuario.mail, nuevoUsuario.password);
     }
+  });
+
+  document.getElementById("suClose").addEventListener("click", () => {
+    window.location.href = "../src/index.html";
   });
 }
 

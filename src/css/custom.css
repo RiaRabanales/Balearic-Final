@@ -81,12 +81,16 @@ body {
   margin-bottom: 1.5rem;
 }
 
-.h1 {
-  font-size: 4rem !important;
+@media screen and (min-width: 1101px) {
+  .h1 {
+    font-size: 4rem !important;
+  }
 }
 
-.h2 {
-  font-size: 2.5rem !important;
+@media screen and (min-width: 1101px) {
+  .h2 {
+    font-size: 2.5rem !important;
+  }
 }
 
 .h3 {

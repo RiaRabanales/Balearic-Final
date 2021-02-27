@@ -1,5 +1,5 @@
 import { gestionarFormRegistro } from "./modules/forms.js";
-import { validarContrasena, validarMail } from "./modules/forms_validation.js";
+import { validarMail } from "./modules/forms_validation.js";
 import { gestionarPersonajes } from "./modules/personajes.js";
 import { gestionarAdmin } from "./modules/admin.js";
 import { gestionarToken, iniciarUsuario, setCookie, getCookie } from "./modules/auth.js";
@@ -100,9 +100,9 @@ function gestionarLogIn() {
     if (usuario == "admin" && contrasena == "admin1234") {
       window.location.href = "../src/admin.html";
     } else if (
-      validarMail(usuario) == "VALIDATED" // && validarContrasena(contrasena) == "VALIDATED"
+      validarMail(usuario) == "VALIDATED"
     ) {
-      //Sólo compruebo que sean viables, al no existir base de datos.
+      //Sólo compruebo que sean viables:
       iniciarUsuario(usuario, contrasena);
     } else {
       console.log("Aviso por consola: log in incorrecto.");
