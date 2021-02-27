@@ -4,7 +4,6 @@
 /* CSS general con elementos no adaptables a bootstrap: */
 main section {
   border: solid 3px #212121;
-  box-shadow: 0.5rem 0.5rem 0.5rem -0.5rem #505050;
 }
 main section iframe {
   height: 320px;
@@ -37,28 +36,6 @@ main section iframe {
   height: 5px;
 }
 
-#menuLogIn {
-  min-width: 225px;
-  border: none;
-  background: #8e231b;
-}
-
-@media screen and (max-width: 799px) {
-  footer .bi {
-    font-size: 1rem;
-  }
-}
-@media screen and (min-width: 800px) {
-  footer .bi {
-    font-size: 2rem;
-  }
-}
-@media screen and (max-width: 799px) {
-  footer #footerCopyright {
-    font-size: small;
-  }
-}
-
 #botonTop {
   display: none;
   /* empieza siempre oculto */
@@ -73,6 +50,17 @@ main section iframe {
 }
 #botonTop:hover {
   color: #212121;
+}
+
+.imgWrapper {
+  max-height: 125px;
+  max-width: 125px;
+  overflow: hidden;
+}
+.imgWrapper img {
+  width: 125px;
+  height: 125px;
+  object-fit: cover;
 }
 
 @font-face {
@@ -90,12 +78,25 @@ body {
   letter-spacing: 3px;
   text-decoration: underline;
   text-decoration-color: #8e231b;
+  margin-bottom: 1.5rem;
+}
+
+.h1 {
+  font-size: 4rem !important;
+}
+
+.h2 {
+  font-size: 2.5rem !important;
 }
 
 .h3 {
   font-family: Corleone, sans-serif;
   font-weight: 350;
   letter-spacing: 2px;
+}
+
+.text-large {
+  font-size: 180%;
 }
 
 /*!

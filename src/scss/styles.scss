@@ -7,7 +7,6 @@
 main {
   section {
     border: solid 3px $color_secondary;
-    box-shadow: 0.5rem 0.5rem 0.5rem -0.5rem $color_secondarylight;
 
     iframe {
       height: 320px;
@@ -44,29 +43,6 @@ main {
   }
 }
 
-#menuLogIn {
-  min-width: 230px;
-  border: none;
-  background: $color_main;
-}
-
-footer {
-  .bi {
-    @media screen and (max-width: 799px) {
-      font-size: 1rem;
-    }
-    @media screen and (min-width: 800px) {
-      font-size: 2rem;
-    }
-  }
-
-  #footerCopyright {
-    @media screen and (max-width: 799px) {
-      font-size: small;
-    }
-  }
-}
-
 #botonTop {
   display: none; /* empieza siempre oculto */
   position: fixed;
@@ -79,5 +55,17 @@ footer {
 
   &:hover {
     color: $color_secondary;
+  }
+}
+
+.imgWrapper {
+  max-height: 125px;
+  max-width: 125px;
+  overflow: hidden;
+
+  img {
+    width: 125px;
+    height: 125px;
+    object-fit: cover;
   }
 }

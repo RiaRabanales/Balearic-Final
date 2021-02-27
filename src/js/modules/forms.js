@@ -258,7 +258,7 @@ function marcarInputError(miInput, miInputError, textoError) {
   }
   document.getElementById(miInput).focus();
   document.getElementById(miInputError).innerHTML = "<i>" + textoError + "</i>";
-  document.getElementById(miInputError).style.display = "inline";
+  document.getElementById(miInputError).classList.remove("d-none");
 }
 
 /**
@@ -276,7 +276,7 @@ function marcarInputVacio(miInput, miInputError) {
     document.getElementById(miInput).classList.remove("is-invalid");
   }
   document.getElementById(miInputError).innerHTML = "";
-  document.getElementById(miInputError).style.display = "none";
+  document.getElementById(miInputError).classList.add("d-none");
 }
 
 /**

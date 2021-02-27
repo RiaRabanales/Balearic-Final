@@ -29,7 +29,7 @@
     <!-- Cuerpo de la página de personajes -->
     <main class="container-fluid p-3 col-12 d-flex justify-content-center">
       <div class="col-md-10 col-lg-8 p-4 d-flex flex-column">
-        <section class="mb-3 p-3 bg-light">
+        <section class="shadow-sm mb-3 p-3 bg-light">
           <p class="h1 text-center">Balearic Builders</p>
 
           <div class="mb-3 p-3 bg-light d-none" id="section0">
@@ -38,22 +38,24 @@
             </p>
           </div>
 
-          <div class="mb-3 p-3 bg-light d-none col-lg-6" id="section1">
-            <div id="carouselExampleControls" class="carousel slide"data-ride="carousel">
-              <div class="carousel-inner" id="carouselIn"></div>
-              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">antes</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">después</span>
-              </a>
+          <div class="d-flex justify-content-center">
+            <div class="mb-3 p-3 bg-light col-lg-6 d-none" id="section1">
+              <div id="carouselExampleControls" class="carousel slide"data-ride="carousel">
+                <div class="carousel-inner" id="carouselIn"></div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">antes</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">después</span>
+                </a>
+              </div>
             </div>
           </div>
         </section>
 
-        <section class="mb-3 py-3 bg-light d-none" role="section" id="section2">
+        <section class="shadow-sm mb-3 py-3 bg-light d-none" role="section" id="section2">
           <p class="h2 text-center">¿Quién eres?</p>
           <div class="col-12 d-flex flex-wrap justify-content-between" id="personajesLista"></div>
         </section>
@@ -61,10 +63,10 @@
         <!-- Paso los detalles de personajes a un modal -->
         <div class="modal" id="pjModal" tabindex="-1" aria-labelledby="pjTitulo" aria-hidden="true">
           <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content bg-primary text-white shadow-lg">
               <div class="modal-header">
                 <h5 class="modal-title" id="pjTitulo"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                <button type="button" class="close text-light" data-dismiss="modal" aria-label="Cerrar">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
@@ -75,7 +77,11 @@
       </div>
     </main>
 
-    <footer class="container-fluid w-100 m-0 p-0"></footer>
+    <footer
+    class="container-fluid w-100 m-0 p-0"
+    style="position: fixed; bottom: 0"
+    id="footer"
+    ></footer>
 
     <!-- Bundle de Bootstrap: siempre al final del body -->
     <script

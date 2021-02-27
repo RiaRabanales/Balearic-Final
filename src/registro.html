@@ -29,18 +29,18 @@
     <main class="container-fluid p-3 flex-fill" role="main">
       <div class="row justify-content-center">
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-          <section class="bg-light p-3 py-lg-4 mb-4">
+          <section class="shadow-sm bg-light p-3 py-lg-4 mb-4">
             <p class="h1 text-center" id="textoAlta">¡Date de alta!</p>
           </section>
-          <form id="signUpForm" class="needs-validation" novalidate role="form">
-            <section class="bg-light p-4 mb-4" role="section">
+          <form id="signUpForm" role="form">
+            <section class="shadow-sm bg-light p-4 mb-4" role="section">
               <p class="h3">Datos de usuario:</p>
               <div class="row">
                 <div class="form-group col-12  mb-lg-1">
                   <label for="suUsername" id="suUsernameLabel">Nombre de usuario</label>
                   <input type="text" class="form-control" id="suUsername" aria-required="true" placeholder="u123456M" aria-labelledby="suUsernameLabel suUsernameDesc" />
                   <p id="suUsernameDesc" class="small pl-1 text-muted" tabindex="-1">Formato: u + 6 números + mayúscula.
-                    <span id="suUsernameError" class="invalid-feedback d-none"></span>
+                    <span id="suUsernameError" class="pl-1 text-primary d-none"></span>
                   </p>
                 </div>
                 <div class="form-group col-md-6 mb-lg-1">
@@ -52,7 +52,7 @@
                     </span>
                   </div>
                   <p id="suPasswDesc" class="small pl-1 text-muted suDesc" tabindex="-1">Formato: 8-12 caracteres alfanuméricos o '_';<br>1+ mayúsculas.
-                  <span id="suPasswError" class="invalid-feedback pl-1 text-primary d-none"></span>
+                  <span id="suPasswError" class="pl-1 text-primary d-none"></span>
                   </p>
                 </div>
                 <div class="form-group col-md-6 mb-lg-1">
@@ -63,44 +63,44 @@
                       <i class="bi bi-eye input-group-text text-muted" role="button" id="suPassw2Icono"></i>
                     </span>
                   </div>
-                  <p id="suPasswError2" class="invalid-feedback small pl-1 text-primary d-none"></p>
+                  <p id="suPasswError2" class="small pl-1 text-primary d-none"></p>
                 </div>
               </div>
             </section>
 
-            <section class="bg-light p-4 mb-4" role="section">
+            <section class="shadow-sm bg-light p-4 mb-4" role="section">
               <p class="h3">Datos personales:</p>
               <div class="row">
                 <div class="form-group col-md-6 mb-lg-1">
                   <label for="suName" id="suNameLabel">Nombre </label>
                   <input type="text" class="form-control" id="suName" placeholder="Vincent" aria-labelledby="suNameLabel suNameDesc"/>
                   <p id="suNameDesc" class="small pl-1 text-muted" tabindex="-1">Introduce tu nombre legal.
-                    <span id="suNameError" class="invalid-feedback pl-1 text-primary d-none"></span>
+                    <span id="suNameError" class="pl-1 text-primary d-none"></span>
                   </p>
                 </div>
                 <div class="form-group col-md-6  mb-lg-1">
                   <label for="suSurname" id="suSurnameLabel">Apellido </label>
                   <input type="text" class="form-control" id="suSurname" placeholder="van der Grosse" aria-labelledby="suSurnameLabel" />
-                  <p id="suSurnameError" class="invalid-feedback small pl-1 text-primary d-none"></p>
+                  <p id="suSurnameError" class="small pl-1 text-primary d-none"></p>
                 </div>
                 <div class="form-group col-12  mb-lg-1">
                   <label for="suTelf" id="suTelfLabel">Teléfono <span class="small text-muted"> opcional</span></label>
                   <input type="text" class="form-control" id="suTelf" placeholder="699-666999" aria-labelledby="suTelfLabel suTelfDesc" />
                   <p id="suTelfDesc" class="small pl-1 text-muted" tabindex="-1">Formato: 6XX-XXXXXX o 9XX-XXXXXX.
-                    <span id="suTelfError" class="invalid-feedback pl-1 text-primary d-none"></span>
+                    <span id="suTelfError" class="pl-1 text-primary d-none"></span>
                   </p>
                 </div>
                 <div class="form-group col-md-6  mb-lg-1">
                   <label for="suMail" id="suMailLabel">E-mail <span class="small text-muted"> opcional</span></label>
                   <input type="text" class="form-control" id="suMail" placeholder="patata@frita.es" aria-labelledby="suMailLabel suMailDesc" />
                   <p id="suMailDesc" class="small pl-1 text-muted" tabindex="-1">Sólo se aceptan extensiones .net, .com y .es.
-                    <span id="suMailError" class="invalid-feedback small pl-1 text-primary d-none"></span>
+                    <span id="suMailError" class="small pl-1 text-primary d-none"></span>
                   </p>
                 </div>
                 <div class="form-group col-md-6  mb-lg-1">
                   <label class="text-muted" for="suMail2" id="suMail2Label">Comprobación de e-mail</label>
                   <input type="text" class="form-control" id="suMail2" disabled />
-                  <p id="suMailError2" class="invalid-feedback small pl-1 text-primary d-none"></p>
+                  <p id="suMailError2" class="small pl-1 text-primary d-none"></p>
                 </div>
                 <div class="form-group col-12  mb-lg-3">
                   <label for="suCountry">País</label>
@@ -108,7 +108,7 @@
                 </div>
                 <div class="form-group col-12 mb-lg-1">
                   <fieldset>
-                    <p class="mb-0">Edad  <span id="suAgeError" class="invalid-feedback small text-primary"></span></p>
+                    <p class="mb-0">Edad  <span id="suAgeError" class="small text-primary"></span></p>
                     <div class="pl-2 pl-md-5">
                       <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="suAge" id="suAgeMenor" value="suAgeMenor">
@@ -124,7 +124,7 @@
               </div>
             </section>
 
-            <section class="bg-light p-3 p-md-4 mb-4">
+            <section class="shadow-sm bg-light p-3 p-md-4 mb-4">
               <div class="btn-group d-flex justify-content-between" role="group">
                 <input
                   class="btn btn-primary"

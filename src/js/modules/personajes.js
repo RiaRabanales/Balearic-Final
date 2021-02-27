@@ -54,13 +54,13 @@ function mostrarCarrusel(token) {
     if (personaje.id == 1) {
       html = `
       <div class="carousel-item active">
-        <img class="d-block h-100 rounded-circle" src="${personajeImg}" alt="Personajes" style="max-height:180px">
+        <img class="d-block rounded-circle" src="${personajeImg}" alt="Personajes" style="max-height:180px; margin:auto">
       </div>
       `;
     } else {
       html = `
       <div class="carousel-item">
-        <img class="d-block h-100 rounded-circle" src="${personajeImg}" alt="Personajes" style="max-height:180px">
+        <img class="d-block rounded-circle" src="${personajeImg}" alt="Personajes" style="max-height:180px; margin:auto">
       </div>
       `;
     }
@@ -82,9 +82,11 @@ function mostrarPersonajes(token) {
     arrayIds.push(personajeId);
     let personajeHtml = `
     <div class="card m-2 p-1 bg-primary text-white" style="width: 11rem;" id="${personajeId}" role="button" data-toggle="modal" data-target="#pjModal">
-      <img class="card-img-top" src="${personajeImg}" alt="${personajeNombre}">
-      <div class="card-body">
-        <p class="card-text text-center small">${personajeNombre}</p>
+      <div class="card-body d-flex flex-column justify-content-between">
+        <div class="imgWrapper">
+          <img class="card-img-top" src="${personajeImg}" alt="${personajeNombre}">
+        </div>
+        <p class="card-text text-center small pt-2">${personajeNombre}</p>
       </div>
     </div>
     `;
