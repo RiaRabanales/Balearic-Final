@@ -6,9 +6,9 @@ María Rabanales
 
 ### Colecciones de POSTMAN:
 Siguiendo el enunciado, se han creado dos colecciones de Postman y guardado junto con los archivos de base en el directorio /APIS. Sus enlaces son los siguientes:
-* [API CRUD]()
-* [API JWT]()
-//TODO completar guardar archivos en carpeta
+* [API CRUD](https://github.com/RiaRabanales/Balearic-Final/tree/main/resources/apis/crud)
+* [API JWT](https://github.com/RiaRabanales/Balearic-Final/tree/main/resources/apis/jwt)
+
 
 ### Tecnologías:
 * HTML
@@ -92,7 +92,7 @@ He intentado emplear clases de Bootstrap en todo momento. Para aligerar la carga
 Respecto a los elementos de Bootstrap empleados, he utilizado los siguientes:
 1. BUTTONS: en todas las páginas reconstruidas con Bootstrap.
 2. BUTTON GROUP: en la página principal (última sección antes del aside) y al final del formulario de registro.
-3. CARDS: en la página de personajes.
+3. CARDS: en la página de personajes, y, por supuesto, en el acordeón.
 4. CAROUSEL: en la página de personajes.
 5. FORMS: en el registro de usuario y en el dropdown de log-in.
 6. DROPDOWNS: en el log-in (en la barra de navegación del header).
@@ -103,8 +103,8 @@ Respecto a los elementos de Bootstrap empleados, he utilizado los siguientes:
 11. TABLES: al mostrar los edificios existentes en la página de administración.
 12. ALERTS: al hacer log-in con datos incorrectos y no de administrador aparece un alert de error bajo la barra de navegación.
 13. BADGES: no tenía mucho sentido incluir este elemento en mi diseño, pero por probarlo lo he empleado en la página 'ok' que he generado, fundamentalmente, para visualizar mis tokens.
-* COLLAPSE/ACCORDIONS //TODO
-* SCROLLSPY //todo
+14. COLLAPSE/ACCORDIONS: en el contenido de la página de inicio (sección inferior). De entrada, el primer elemento del acordeón se muestra, mientras que el segundo está *collapsed*.
+
 
 Siempre que ha sido posible he modificado el css y los scripts originales para adaptarlos a las clases de Bootstrap. Me parece interesante destacar el uso creciente que he ido haciendo de la clase bootstrap *display-none* (d-none); incluirla y retirarla para mostrar y ocultar elementos a través de su clase ha sido una actividad continua en mi desarrollo de javascript.
 
