@@ -10,7 +10,7 @@ import {
   generarMail,
   generarMail2,
 } from "./forms_validationArray.js";
-import { visualizarContrasena } from "./../scripts.js"
+import { visualizarContrasena } from "../main.js"
 import { crearUsuario } from "./auth.js";
 
 /**
