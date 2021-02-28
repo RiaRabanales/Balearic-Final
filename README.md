@@ -108,7 +108,7 @@ Respecto a los elementos de Bootstrap empleados, he utilizado los siguientes:
 
 Siempre que ha sido posible he modificado el css y los scripts originales para adaptarlos a las clases de Bootstrap. Me parece interesante destacar el uso creciente que he ido haciendo de la clase bootstrap *display-none* (d-none); incluirla y retirarla para mostrar y ocultar elementos a través de su clase ha sido una actividad continua en mi desarrollo de javascript.
 
-A título de ejemplo cabe ver el tratamiento del *alert* de error al hacer un log-in incorrecto, que aparece debajo de la barra de navegación en todas las páginas y desaparece a los 6 segundos. Este código se encuentra en la función *gestionarLogin* del archivo scripts.js:
+A título de ejemplo cabe ver el tratamiento del *alert* de error al hacer un log-in incorrecto, que aparece debajo de la barra de navegación en todas las páginas y desaparece a los 6 segundos. Este código se encuentra en la función *gestionarLogin* del archivo main.js:
 
 ~~~
 } else {
@@ -121,6 +121,16 @@ A título de ejemplo cabe ver el tratamiento del *alert* de error al hacer un lo
       }, 6000);
     }
 ~~~
+
+### Gulp
+He intentado nuevamente aplicar Gulp a mi proyecto. Siguiendo las instrucciones([1](https://github.com/classicoman2/guide-gulp-minify)-[2](https://github.com/classicoman2/gulp-dev-prod)) vistas en clase (pero copiando mis módulos .js a mano dentro de la carpeta dist/) he creado los archivos gulpfile.js y package.json, instalado las dependencias y, aquí, encontrado un problema: si bien gulp build funcionaba correctamente, las imágenes no se minificaban como tocaba. El proyecto funcionaba, pero no los url de las imágenes: aparecía sólo el texto ALT.
+![Gulp: no minify](https://i.ibb.co/P12CgrS/Capture.jpg)
+
+Tras investigar la situación vi que el problema estaba en la distribución original de mi proyecto: las imágenes estaban guardadas directamente en la carpeta images, en vez de dentro de assets/images.
+
+Además, mi archivo principal .js se llamaba *scripts.js*, con lo que al reconvertirse en *main.js* los enlaces e imports/exports al mismo dejaban de funcionar.
+
+Tras arreglar estos problemas he logrado que Gulp funcione correctamente, y se puede trabajar *live* con el proyecto desde dist/index.html.
 
 ### Bootstrap vs SCSS:
 Dado que algunos efectos (por ejemplo, la rotación de las imágenes) no se pueden hacer bien en Bootstrap, he decidido mantener tres archivos scss:
