@@ -15,7 +15,7 @@ Siguiendo el enunciado, se han creado dos colecciones de Postman y guardado junt
 * CSS
 * SCSS/SASS
 * JavaScript
-* Canvas
+* Gulp
 * Markdown
 * JQuery (marginal)
 
@@ -29,7 +29,7 @@ He eliminado las páginas y scripts exclusivos del juego y los he sustituído po
 En todo momento he seguido los criterios de diseño, usabilidad y accesibilidad que hemos visto en clase, y he trabajado buscando la máxima responsividad, teniendo en cuenta el diseño *móvil* desde el principio.
 
 ### Cambios respecto al diseño original:
-El principal cambio en la página principal ha sido una pequeña reorganización del contenido de *header* y *footer*: si bien he mantenido el concepto original, he decidido pasar el e-mail de contacto de la parte superior a la inferior. De esta manera puedo mantener todos los links de la barra de navegación sin que el contenido de esta resulte demasiado denso.
+El principal cambio en la página principal ha sido una pequeña reorganización del contenido de *header* y *footer*: si bien he mantenido el concepto original, he decidido pasar el e-mail de contacto de la parte superior a la inferior. De esta manera puedo mantener todos los links de la barra de navegación sin que el contenido de esta resulte demasiado denso. El footer me parece básico, al incluir más *links*, de manera que en buena parte de las páginas (con alguna excepción, como en registro de usuario) ha pasado a estar permanentemente fijo en la zona inferior. Siguiendo las instrucciones, he eliminado el aviso de *cookies*.
 
 Aparte, he decidido emplear la etiqueta 'disabled' para los links no utilizables de la barra de navegación.
 

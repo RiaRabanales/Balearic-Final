@@ -24,7 +24,6 @@ function mostrarTablaConstrucciones(arrayConstrucciones) {
       No se han encontrado construcciones.
       </p>
     `;
-    //TODO el footer se me descoloca
   } else {
     // No puedo poner los event listeners en el bucle porque los anularía en cada ciclo.
     // Creo un array de objetos y los añadiré al final
